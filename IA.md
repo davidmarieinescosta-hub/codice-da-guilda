@@ -15,3 +15,8 @@
 - Pergunta: usei a IA ao longo do dia para revisar o .gitignore, decidir como representar os heróis e depurar os erros do codice.py (dois NameError).
 - Resposta: a IA guiou o teste do .gitignore (eu expliquei as linhas, ela completou as lacunas), me deixou decidir sozinho a estrutura dos heróis e, nos erros, me ensinou a ler o traceback de trás para a frente e a investigar com sondas (dir(), type, a bolinha do VSCode) em vez de entregar a resposta pronta.
 - O que mudei/decidi: escolhi dicionário para cada herói porque o acesso é pelo nome do campo (descartando a lista, que exigiria lembrar posições) e uma lista como baú dos heróis. Parei antes de corrigir o baú mal posicionado — fica para amanhã.
+
+## Dia 3
+- Pergunta: retomei do ponto onde paramos e pedi ajuda ao longo do dia — por que `cadastar_heroi()` dava NameError, e como arrumar o print da `listar_herois`.
+- Resposta: a IA explicou a diferença entre o REPL (mundo do `>>>`, em branco) e rodar o arquivo, me devolveu pistas em vez da resposta pronta (Regra 5), rodou a minha linha para mostrar a prova — a vírgula dentro das chaves criou uma tupla —, nomeou os conceitos (tupla, dicionário vs biblioteca, convenção de aspas simples dentro da f-string) e me ensinou o fechamento do dia: commit com explicação em voz alta, diário e rastro.
+- O que mudei/decidi: decidi fazer um commit único com as duas correções em vez de dois (cheguei a testar o `git add -p`, mas preferi simplificar). Mantive as entradas do Dia 2 no diário como estavam, após releitura.
