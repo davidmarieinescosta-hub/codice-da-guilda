@@ -1,5 +1,5 @@
+herois = []
 def cadastrar_heroi():
-    herois = []
     nome = input("Nome do herói: ")
     classe = input("Classe: ")
     nivel = int(input("Nível: "))
@@ -10,4 +10,5 @@ def cadastrar_heroi():
 
 def listar_herois():
     for heroi in herois:
-        print(f"{heroi}, é um dos membros da guilda!")
+        print(f"{heroi['nome']}, {heroi['classe']}, {heroi['nivel']}, aqui estão as caracteristicas de um membro da guilda.")
+
