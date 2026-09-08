@@ -10,5 +10,15 @@ def cadastrar_heroi():
 
 def listar_herois():
     for heroi in herois:
-        print(f"{heroi['nome']}, {heroi['classe']}, {heroi['nivel']}, aqui estão as caracteristicas de um membro da guilda.")
+        print(f"{heroi['nome']}, {heroi['classe']}, level: {heroi['nivel']} ")
+        
 
+
+def buscar_heroi(nome_procurado):
+    for heroi in herois:
+        if heroi["nome"] == nome_procurado:
+            print(heroi['nome'])                   
+       
+        
+
+    
