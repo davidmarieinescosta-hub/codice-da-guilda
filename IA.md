@@ -20,3 +20,8 @@
 - Pergunta: retomei do ponto onde paramos e pedi ajuda ao longo do dia — por que `cadastar_heroi()` dava NameError, e como arrumar o print da `listar_herois`.
 - Resposta: a IA explicou a diferença entre o REPL (mundo do `>>>`, em branco) e rodar o arquivo, me devolveu pistas em vez da resposta pronta (Regra 5), rodou a minha linha para mostrar a prova — a vírgula dentro das chaves criou uma tupla —, nomeou os conceitos (tupla, dicionário vs biblioteca, convenção de aspas simples dentro da f-string) e me ensinou o fechamento do dia: commit com explicação em voz alta, diário e rastro.
 - O que mudei/decidi: decidi fazer um commit único com as duas correções em vez de dois (cheguei a testar o `git add -p`, mas preferi simplificar). Mantive as entradas do Dia 2 no diário como estavam, após releitura.
+
+## Dia 4
+- Pergunta: como escrever a função de busca por nome — e, no meio do caminho, perguntei se a IA me mostrava pronto ou se eu tentava mais.
+- Resposta: a IA me devolveu para tentar (Regra 5) e, a cada erro meu, rodou meu código para mostrar a prova — o `return` devolvia sempre o primeiro herói, o `if` nunca disparava. Depois da minha terceira tentativa, implementou junto a versão final linha por linha, e eu digitei — não colei.
+- O que mudei/decidi: eu escolhi buscar o nome porque eu acho que quando vc quer identificar alguém primeiramente, você procura o seu nome que é algo que a diferencia de todas as pessoas.
