@@ -19,6 +19,17 @@ def buscar_heroi(nome_procurado):
         if heroi["nome"] == nome_procurado:
             print(heroi['nome'])                   
        
-        
+
+def filtrar_herois_por_classe(classe_procurada):
+    aprovados = []
+    for heroi in herois:
+        if heroi["classe"] == classe_procurada:
+          aprovados.append(heroi)
+    return aprovados
+
+    
+
+
+
 
     
