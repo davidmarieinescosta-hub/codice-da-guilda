@@ -18,4 +18,9 @@
 ## Dia 4 (08/09/26)
 - O que fiz: escolhi a busca por nome como próxima função e a escrevi do zero em três tentativas — o `return` cortava o laço no primeiro giro (devolvia sempre o primeiro herói), o mesmo nome em duas caixas engolia o procurado, e a variável do `for` tinha que ser um nome simples. No fim digitei a versão certa: ela encontra Gandalf e fica em silêncio quando o nome não existe.
 - Onde travei: na comparação — `if nome == str` nunca disparava, e `for heroi["nome"] in herois` dava NameError, porque a variável do `for` é uma caixa nova que o próprio loop cria, com nome simples; o `["nome"]` pertence à comparação, não ao `for`.
-- O que entendi hoje: ler o TypeError de argumento faltando (a chamada precisa passar o que a função exige), que `str` é um tipo e não um valor, e que o `for` cria a caixa a cada giro — por isso a variável dele tem nome simples. 
+- O que entendi hoje: ler o TypeError de argumento faltando (a chamada precisa passar o que a função exige), que `str` é um tipo e não um valor, e que o `for` cria a caixa a cada giro — por isso a variável dele tem nome simples.
+
+## Dia 5 (09/09/26)
+- O que fiz: paguei a dívida da Regra 4 (expliquei a buscar_heroi em voz alta), aprovei o diário do Dia 4 e escrevi a filtrar_herois_por_classe — lista aprovados nascendo dentro da função, append do herói inteiro e return depois do loop. Commitei.
+- Onde travei: chamei a função sem segurar o resultado — a caixa `magos` nunca tinha sido criada e o `print(magos)` deu NameError; a minha versão do meio dizia "é um mago" até para os Rangers (texto fixo dentro de função genérica mente); e filtrei "Magos" com s e recebi lista vazia — a comparação é letra por letra, e a lista vazia é a resposta honesta.
+- O que entendi hoje: uma função sem return entrega None — o valor evapora; segurar o resultado é trabalho do `=` (mãos, não olhos); o return é o que deixa o chamador usar o resultado depois; e reconheci que o filtro é o mesmo esqueleto da busca — percorre, filtra, entrega. 

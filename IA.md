@@ -25,3 +25,8 @@
 - Pergunta: como escrever a função de busca por nome — e, no meio do caminho, perguntei se a IA me mostrava pronto ou se eu tentava mais.
 - Resposta: a IA me devolveu para tentar (Regra 5) e, a cada erro meu, rodou meu código para mostrar a prova — o `return` devolvia sempre o primeiro herói, o `if` nunca disparava. Depois da minha terceira tentativa, implementou junto a versão final linha por linha, e eu digitei — não colei.
 - O que mudei/decidi: eu escolhi buscar o nome porque eu acho que quando vc quer identificar alguém primeiramente, você procura o seu nome que é algo que a diferencia de todas as pessoas.
+
+## Dia 5
+- Pergunta: como fazer a função de filtrar por classe — e como exibir o resultado de forma bonita sem prender a mensagem dentro da função.
+- Resposta: a IA me devolveu pistas a cada rodada e rodou meus testes para provar os erros — o None que o chamador recebe quando a função só usa print, e o "é um mago" aparecendo para os Rangers. Me ensinou que a função separa (return entrega os dados) e a exibição exibe (responsabilidade única); que a chamada entrega o valor entre aspas (o porteiro); e que segurar o resultado é trabalho do `=` (mãos, não olhos).
+- O que mudei/decidi: escolhi filtrar antes dos números para fazer por etapas, construindo algo mais linear e com evolução mais organizada; e escolhi return em vez de print porque posso querer usar o resultado depois — o print mostraria e perderia. 
