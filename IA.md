@@ -29,4 +29,4 @@
 ## Dia 5
 - Pergunta: como fazer a função de filtrar por classe — e como exibir o resultado de forma bonita sem prender a mensagem dentro da função.
 - Resposta: a IA me devolveu pistas a cada rodada e rodou meus testes para provar os erros — o None que o chamador recebe quando a função só usa print, e o "é um mago" aparecendo para os Rangers. Me ensinou que a função separa (return entrega os dados) e a exibição exibe (responsabilidade única); que a chamada entrega o valor entre aspas (o porteiro); e que segurar o resultado é trabalho do `=` (mãos, não olhos).
-- O que mudei/decidi: escolhi filtrar antes dos números para fazer por etapas, construindo algo mais linear e com evolução mais organizada; e escolhi return em vez de print porque posso querer usar o resultado depois — o print mostraria e perderia. 
+- O que mudei/decidi: escolhi filtrar antes dos números para fazer por etapas, construindo algo mais linear e com evolução mais organizada; e escolhi return em vez de print porque posso querer usar o resultado depois — o print mostraria e perderia. E depois de uma conversa coma IA, eu decidi não tirar o CLAUDE.md do github
