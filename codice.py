@@ -44,6 +44,38 @@ def mostrar_numeros():
     print(f'{nome_mais_forte}, nível {mais_forte}, é o mais forte')
 
 
+def menu():
+    opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
+    while opções != "sair":
+        if opções == "cadastrar":
+            cadastrar_heroi()
+        elif opções == "listar":
+            listar_herois()
+        elif opções == "buscar":
+            nome = input("Qual nome quer buscar? ")
+            buscar_heroi(nome)
+        elif opções == "filtrar":
+            classe = input("Qual classe quer filtrar? ")
+            aprovados = filtrar_herois_por_classe(classe)
+            for heroi in aprovados:
+                print(f"{heroi['nome']}, {heroi['classe']}, level : {heroi['nivel']} ")
+            
+        elif opções == "números":
+            mostrar_numeros()
+        opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
+    print("agora você conhece a guilda")
+
+menu()
+
+
+
+            
+   
+    
+        
+
+
+
 
 
     
