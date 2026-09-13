@@ -23,4 +23,9 @@
 ## Dia 5 (09/09/26)
 - O que fiz: paguei a dívida da Regra 4 (expliquei a buscar_heroi em voz alta), aprovei o diário do Dia 4 e escrevi a filtrar_herois_por_classe — lista aprovados nascendo dentro da função, append do herói inteiro e return depois do loop. Commitei.
 - Onde travei: chamei a função sem segurar o resultado — a caixa `magos` nunca tinha sido criada e o `print(magos)` deu NameError; a minha versão do meio dizia "é um mago" até para os Rangers (texto fixo dentro de função genérica mente); e filtrei "Magos" com s e recebi lista vazia — a comparação é letra por letra, e a lista vazia é a resposta honesta.
-- O que entendi hoje: uma função sem return entrega None — o valor evapora; segurar o resultado é trabalho do `=` (mãos, não olhos); o return é o que deixa o chamador usar o resultado depois; e reconheci que o filtro é o mesmo esqueleto da busca — percorre, filtra, entrega. 
+- O que entendi hoje: uma função sem return entrega None — o valor evapora; segurar o resultado é trabalho do `=` (mãos, não olhos); o return é o que deixa o chamador usar o resultado depois; e reconheci que o filtro é o mesmo esqueleto da busca — percorre, filtra, entrega.
+
+## Dia 6 (12/09/26)
+- O que fiz: fechei o rastro do Dia 5 (adendo no IA.md sobre o CLAUDE.md) e escrevi a mostrar_numeros — o total com len, o cofre acumulador para a média, e a caixa do campeão (duas caixas reescritas juntas pelo if, nível e nome).
+- Onde travei: a buscar_heroi "não voltava nada" — o baú estava vazio (cada sessão nasce com baú novo; o programa não tem memória, e é de propósito); depois o "Gandalf " com espaço invisível no fim não era encontrado (o len provou: 8 letras, não 7); e o REPL insistia na função velha — editar o arquivo não alcança o Python que já está rodando.
+- O que entendi hoje: as três camadas onde o código vive (editor, disco, processo), a sonda len para medir strings, e o coração do acumulador — caixa = caixa + x usa o valor velho para fabricar o novo; na caixa do campeão, a reescrita só acontece quando o if deixa entrar. 

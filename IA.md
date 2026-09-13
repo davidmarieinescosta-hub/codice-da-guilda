@@ -30,3 +30,9 @@
 - Pergunta: como fazer a função de filtrar por classe — e como exibir o resultado de forma bonita sem prender a mensagem dentro da função.
 - Resposta: a IA me devolveu pistas a cada rodada e rodou meus testes para provar os erros — o None que o chamador recebe quando a função só usa print, e o "é um mago" aparecendo para os Rangers. Me ensinou que a função separa (return entrega os dados) e a exibição exibe (responsabilidade única); que a chamada entrega o valor entre aspas (o porteiro); e que segurar o resultado é trabalho do `=` (mãos, não olhos).
 - O que mudei/decidi: escolhi filtrar antes dos números para fazer por etapas, construindo algo mais linear e com evolução mais organizada; e escolhi return em vez de print porque posso querer usar o resultado depois — o print mostraria e perderia. E depois de uma conversa coma IA, eu decidi não tirar o CLAUDE.md do github
+
+## Dia 6
+- Pergunta: se o "erro" da buscar_heroi era real (ela não voltava nada), como escrever a mostrar_numeros, e por que o Python não via as minhas edições.
+- Resposta: a IA provou com testes que a buscar estava intacta (baú vazio = silêncio; depois achou a impressão digital do espaço invisível no "Gandalf "). Me deu as três peças dos números (len, acumulador, campeão), explicou as três camadas editor/disco/processo, e no fim do dia — eu estava exausto, depois dos meus 40 minutos de luta — me entregou a versão final da função linha por linha, e eu digitei.
+- O que mudei/decidi: escolhi a opção A (substituir o filtro de nível pela mostrar_numeros de verdade). Eu decidi fazer a forma de verdade porque seria a forma correta e mais pratica.
+
