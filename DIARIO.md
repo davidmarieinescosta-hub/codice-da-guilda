@@ -38,4 +38,5 @@
 ## Dia 8 (14/09/26)
 - O que fiz: escrevi o README sozinho, em três versões — título, o que é (com a honestidade do Ato I: os dados somem quando o programa fecha), as seis funções e a seção Como rodar com o bloco de código. Commitei.
 - Onde travei: quase nada — o texto fluiu; o único tropeço foi deixar o documento só no editor (a lição das três camadas: o disco ficou vazio até o Ctrl+S) e escrever "o comando, em um bloco de código" como texto, antes de aprender que o bloco é formatação do markdown, três crases.
-- O que entendi hoje: que o README é a vitrine e responde três perguntas — o que é, como rodar, o que funciona — garantindo o critério de rodar em outra máquina; que markdown usa ``` para blocos de código; e que justificativa de decisão (a língua) não precisa pedir desculpas na vitrine — ela mora no Rito. 
+- O que entendi hoje: que o README é a vitrine e responde três perguntas — o que é, como rodar, o que funciona — garantindo o critério de rodar em outra máquina; que markdown usa ``` para blocos de código; e que justificativa de decisão (a língua) não precisa pedir desculpas na vitrine — ela mora no Rito.
+- Adendo: descobri que meu GitHub estava 15 commits atrás — o commit local não é publicação; o push é a terceira camada do git. Rodei o push e o repositório público agora mostra o projeto inteiro. 

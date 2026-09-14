@@ -44,5 +44,6 @@
 ## Dia 8
 - Pergunta: como escrever o README — o que ele precisa responder, em que língua, e como colocar o comando de rodar.
 - Resposta: a IA deu o tripé (o que é, como rodar, o que funciona), apontou a seção Como rodar que faltava, ensinou o bloco de código do markdown com três crases (depois que eu escrevi a instrução como texto), revisou as três versões e me lembrou do Ctrl+S quando o arquivo do disco ficou vazio.
-- O que mudei/decidi: escolhi o português porque todo o programa está nessa língua (descartando o inglês, convenção do GitHub); e mantive a nota da escolha no README. 
+- O que mudei/decidi: escolhi o português porque todo o programa está nessa língua (descartando o inglês, convenção do GitHub); e mantive a nota da escolha no README.
+- Adendo: perguntei se o repositório era mesmo público (o navegador deu 404); a IA investigou — o ls-remote provou que é público, e o branch -vv revelou 15 commits locais nunca enviados. Eu rodei o push e publiquei o projeto completo. 
 
