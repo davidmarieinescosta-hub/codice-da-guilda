@@ -24,4 +24,4 @@ python codice.py
 ```
 
 
-Obs: eu escolhi fazer o repositório em português porque todo o programa está nessa lingua.
+Obs: eu escolhi fazer o repositório em português porque todo o programa está nessa língua.
