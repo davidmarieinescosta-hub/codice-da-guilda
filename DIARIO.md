@@ -28,4 +28,9 @@
 ## Dia 6 (12/09/26)
 - O que fiz: fechei o rastro do Dia 5 (adendo no IA.md sobre o CLAUDE.md) e escrevi a mostrar_numeros — o total com len, o cofre acumulador para a média, e a caixa do campeão (duas caixas reescritas juntas pelo if, nível e nome).
 - Onde travei: a buscar_heroi "não voltava nada" — o baú estava vazio (cada sessão nasce com baú novo; o programa não tem memória, e é de propósito); depois o "Gandalf " com espaço invisível no fim não era encontrado (o len provou: 8 letras, não 7); e o REPL insistia na função velha — editar o arquivo não alcança o Python que já está rodando.
-- O que entendi hoje: as três camadas onde o código vive (editor, disco, processo), a sonda len para medir strings, e o coração do acumulador — caixa = caixa + x usa o valor velho para fabricar o novo; na caixa do campeão, a reescrita só acontece quando o if deixa entrar. 
+- O que entendi hoje: as três camadas onde o código vive (editor, disco, processo), a sonda len para medir strings, e o coração do acumulador — caixa = caixa + x usa o valor velho para fabricar o novo; na caixa do campeão, a reescrita só acontece quando o if deixa entrar.
+
+## Dia 7 (13/09/26)
+- O que fiz: escrevi o menu — a porta giratória do while, o roteador de if/elif, as caixas nome e classe alimentando os parâmetros da busca e do filtro, o aprovados pegando a bola do return, e a chave de ignição menu() no fim do arquivo. O programa agora roda sozinho com python codice.py. Com isso, as seis funções estão completas.
+- Onde travei: na condição do while (escrevi == no lugar de != — a porta girava ao contrário); na releitura da pergunta (deixei o "s ou n" fora do loop, inalcançável — e ainda inventei a recursão sem querer, menu() chamando menu()); e no filtrar, que devolvia a lista e o menu não pegava — silêncio total (num programa, ninguém mostra nada de graça, só o REPL mostra).
+- O que entendi hoje: o contrato do while — roda ENQUANTO a condição for verdadeira e para quando vira falsa, e a pergunta refeita no fim do corpo alimenta a próxima verificação; que funções se chamam (o menu é o capitão); e que usabilidade é pensar em quem usa o programa, não em quem escreve. 
