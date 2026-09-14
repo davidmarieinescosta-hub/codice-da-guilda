@@ -39,5 +39,10 @@
 ## Dia 7
 - Pergunta: como fazer o menu — se eu posso ligar funções, se vou precisar do if, e como passar os parâmetros da busca e do filtro.
 - Resposta: a IA confirmou que funções se chamam (o menu é o capitão que grita as ordens), ensinou o while (a porta giratória), o elif e o !=, me avisou das armadilhas (a condição invertida, a pergunta que precisa ser refeita dentro do loop), nomeou a recursão que inventei sem querer (menu() chamando menu()), e testou o programa inteiro com uma sessão simulada — achando o return do filtrar evaporando no menu. Também corrigiu: o Ato II resolve persistência (salvar em arquivo), não o menu.
-- O que mudei/decidi: escolhi "sair" escrito em vez de um número por usabilidade — quem abre o programa entende na hora, sem consultar legenda; e deixei a opção desconhecida ser ignorada sem quebrar, para polir depois. 
+- O que mudei/decidi: escolhi "sair" escrito em vez de um número por usabilidade — quem abre o programa entende na hora, sem consultar legenda; e deixei a opção desconhecida ser ignorada sem quebrar, para polir depois.
+
+## Dia 8
+- Pergunta: como escrever o README — o que ele precisa responder, em que língua, e como colocar o comando de rodar.
+- Resposta: a IA deu o tripé (o que é, como rodar, o que funciona), apontou a seção Como rodar que faltava, ensinou o bloco de código do markdown com três crases (depois que eu escrevi a instrução como texto), revisou as três versões e me lembrou do Ctrl+S quando o arquivo do disco ficou vazio.
+- O que mudei/decidi: escolhi o português porque todo o programa está nessa língua (descartando o inglês, convenção do GitHub); e mantive a nota da escolha no README. 
 

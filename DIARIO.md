@@ -33,4 +33,9 @@
 ## Dia 7 (13/09/26)
 - O que fiz: escrevi o menu — a porta giratória do while, o roteador de if/elif, as caixas nome e classe alimentando os parâmetros da busca e do filtro, o aprovados pegando a bola do return, e a chave de ignição menu() no fim do arquivo. O programa agora roda sozinho com python codice.py. Com isso, as seis funções estão completas.
 - Onde travei: na condição do while (escrevi == no lugar de != — a porta girava ao contrário); na releitura da pergunta (deixei o "s ou n" fora do loop, inalcançável — e ainda inventei a recursão sem querer, menu() chamando menu()); e no filtrar, que devolvia a lista e o menu não pegava — silêncio total (num programa, ninguém mostra nada de graça, só o REPL mostra).
-- O que entendi hoje: o contrato do while — roda ENQUANTO a condição for verdadeira e para quando vira falsa, e a pergunta refeita no fim do corpo alimenta a próxima verificação; que funções se chamam (o menu é o capitão); e que usabilidade é pensar em quem usa o programa, não em quem escreve. 
+- O que entendi hoje: o contrato do while — roda ENQUANTO a condição for verdadeira e para quando vira falsa, e a pergunta refeita no fim do corpo alimenta a próxima verificação; que funções se chamam (o menu é o capitão); e que usabilidade é pensar em quem usa o programa, não em quem escreve.
+
+## Dia 8 (14/09/26)
+- O que fiz: escrevi o README sozinho, em três versões — título, o que é (com a honestidade do Ato I: os dados somem quando o programa fecha), as seis funções e a seção Como rodar com o bloco de código. Commitei.
+- Onde travei: quase nada — o texto fluiu; o único tropeço foi deixar o documento só no editor (a lição das três camadas: o disco ficou vazio até o Ctrl+S) e escrever "o comando, em um bloco de código" como texto, antes de aprender que o bloco é formatação do markdown, três crases.
+- O que entendi hoje: que o README é a vitrine e responde três perguntas — o que é, como rodar, o que funciona — garantindo o critério de rodar em outra máquina; que markdown usa ``` para blocos de código; e que justificativa de decisão (a língua) não precisa pedir desculpas na vitrine — ela mora no Rito. 
