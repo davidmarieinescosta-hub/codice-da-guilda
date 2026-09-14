@@ -107,11 +107,15 @@ nenhuma.
 - No mínimo 20 commits, em pelo menos 8 dias diferentes, mensagens no imperativo.
 - Um .gitignore que o autor entende linha por linha.
 
-## Estado do projeto (03/09/2026)
+## Estado do projeto (14/09/2026)
 
 - Remoto `origin` configurado (github.com/davidmarieinescosta-hub/codice-da-guilda).
-- Nenhum commit ainda — o commit inicial é a primeira pendência.
-- codice.py e README.md existem mas estão vazios.
+- 18 commits em 8 dias diferentes, mensagens no imperativo.
+- codice.py completo: 6 funções (cadastrar, listar, buscar, filtrar por classe,
+  números, menu), roda com `python codice.py`; dados vivem em memória — a
+  persistência fica para o Ato II.
+- README.md escrito pelo autor: o que é, como rodar, o que já funciona.
+- DIARIO.md e IA.md preenchidos até o Dia 8.
 - .claude/settings.json contém credencial de API em texto puro. Está no .gitignore;
   nunca use `git add -f` nele nem copie o arquivo para outro lugar. Se algum dia for
   commitado, a chave precisa ser revogada.
