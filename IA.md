@@ -47,3 +47,8 @@
 - O que mudei/decidi: escolhi o português porque todo o programa está nessa língua (descartando o inglês, convenção do GitHub); e mantive a nota da escolha no README.
 - Adendo: perguntei se o repositório era mesmo público (o navegador deu 404); a IA investigou — o ls-remote provou que é público, e o branch -vv revelou 15 commits locais nunca enviados. Eu rodei o push e publiquei o projeto completo. 
 
+
+## Dia 9 
+- Pergunta: como enviar o repositório para o mestre, que me passou o e-mail dele.
+- Resposta: a IA mostrou que o repositório público se envia pelo link (e pelo git clone), avisou que o ZIP do GitHub não carrega a história dos commits — e rascunhou o e-mail. Depois, quando o Ato II chegou, mapeou os 7 critérios e propôs a sequência de etapas.
+- O que mudei/decidi: enviei o link do repositório ao mestre e recebi o Ato II e decidi que a primeira etapa dele seria a arquitetura.
