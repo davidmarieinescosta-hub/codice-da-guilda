@@ -62,6 +62,15 @@ para o rito, não contorna:
   pergunta feita a uma IA, commits pequenos e distribuídos (o critério exige 20+
   commits em 8+ dias diferentes). Se faltar algo, avise o autor antes de encerrar.
 
+### Resumo de conceitos no fim da sessão
+
+Ao encerrar cada sessão, entregue ao autor um resumo dos conceitos vistos no dia,
+em formato Obsidian: frontmatter (data, ato, dia, tags), callouts (`> [!note]`,
+`> [!example]`, `> [!question]`), wikilinks entre conceitos e uma lista de estudo
+com checkboxes. Salve como nota no vault do autor (o caminho está na memória da
+IA). O autor revisa e ajusta com as próprias palavras — é material de estudo
+dele, não relatório para a IA.
+
 ## Visão geral
 
 Programa de terminal em Python chamado [codice.py](codice.py) que registra os heróis da
