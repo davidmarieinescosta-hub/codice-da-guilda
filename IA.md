@@ -45,7 +45,12 @@
 - Pergunta: como escrever o README — o que ele precisa responder, em que língua, e como colocar o comando de rodar.
 - Resposta: a IA deu o tripé (o que é, como rodar, o que funciona), apontou a seção Como rodar que faltava, ensinou o bloco de código do markdown com três crases (depois que eu escrevi a instrução como texto), revisou as três versões e me lembrou do Ctrl+S quando o arquivo do disco ficou vazio.
 - O que mudei/decidi: escolhi o português porque todo o programa está nessa língua (descartando o inglês, convenção do GitHub); e mantive a nota da escolha no README.
-- Adendo: perguntei se o repositório era mesmo público (o navegador deu 404); a IA investigou — o ls-remote provou que é público, e o branch -vv revelou 15 commits locais nunca enviados. Eu rodei o push e publiquei o projeto completo. 
+- Adendo: perguntei se o repositório era mesmo público (o navegador deu 404); a IA investigou — o ls-remote provou que é público, e o branch -vv revelou 15 commits locais nunca enviados. Eu rodei o push e publiquei o projeto completo.
+
+## Dia 10
+- Pergunta: como começar o Ato II — a arquitetura (quem fala, quem decide, quem lembra), o que fazer com o rastro pendente do Dia 9, e como organizar os resumos de conceitos no Obsidian.
+- Resposta: a IA propôs começar pela arquitetura no papel e guiou com quatro perguntas (partir as funções mistas, o armazenamento vazio, a quarta sala, o dono do baú); ensinou o ciclo branch + PR na prática; rascunhou o ARQUITETURA.md — que eu expliquei em voz alta antes do merge; localizou o vault no disco e escreveu a nota de conceitos do dia com callouts, wikilinks e mermaid.
+- O que mudei/decidi: escolhi começar pela arquitetura; decidi as quatro salas (menu na entrada, mostrar_numeros nos relatórios); entendi que o baú não tem dono — passa por todas e volta para o arquivo; e pedi que a IA salve o resumo de conceitos no meu vault no fim de cada sessão.  
 
 
 ## Dia 9 
