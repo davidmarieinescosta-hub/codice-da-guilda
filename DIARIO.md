@@ -44,4 +44,9 @@
 ## Dia 10 (23/09/26)
 - O que fiz: comecei o Ato II — primeiro ciclo branch + PR (o rastro pendente do Dia 9), decidi a arquitetura das quatro salas (entrada, decisões, relatórios, armazenamento), escrevi o ARQUITETURA.md e mergeei no segundo PR, e criei a nota de conceitos do dia no Obsidian com callouts, wikilinks e mermaid.
 - Onde travei: na pergunta 4 da arquitetura — quem é o dono do baú? Demorei a ver que ninguém: ele circula por parâmetro e volta para o arquivo; e na hora de passar o caminho do vault (o link interno do Obsidian não é o caminho do disco — a IA achou a pasta no Explorador).
-- O que entendi hoje: módulo é um arquivo com uma responsabilidade só; função pura recebe o que precisa e devolve o resultado sem mexer no mundo — efeito colateral é o contrário; branch é linha paralela e PR é a porta da frente da main; e arquitetura se desenha no papel antes de codar. 
+- O que entendi hoje: módulo é um arquivo com uma responsabilidade só; função pura recebe o que precisa e devolve o resultado sem mexer no mundo — efeito colateral é o contrário; branch é linha paralela e PR é a porta da frente da main; e arquitetura se desenha no papel antes de codar.
+
+## Dia 11 (24/09/26)
+- O que fiz: criei o armazenamento.py — a salvar_herois grava o baú no pergaminho herois.json em JSON, com o José saindo acentuado; decidi que o arquivo de dados fica fora do repositório e aprendi o git check-ignore. Dois PRs mergeados (o módulo e a linha do .gitignore).
+- Onde travei: na explicação da Regra 4 — o with e o json.dump eu não sabia explicar, e a IA destrinchou linha por linha até eu re-explicar com as minhas palavras; e no mistério do herois.json que continuava no git status — o commit tinha levado só o armazenamento.py (editor aberto não é linha salva).
+- O que entendi hoje: JSON é serialização — traduz estrutura da memória em texto e de volta; o with é o guarda-chuva que fecha o arquivo aconteça o que acontecer; "w" é o modo gravar; encoding utf-8 + ensure_ascii False são as duas chaves anti-"JosÃ©"; e dado gerado a cada execução não entra no repo — vai para o .gitignore. 

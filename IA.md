@@ -50,7 +50,12 @@
 ## Dia 10
 - Pergunta: como começar o Ato II — a arquitetura (quem fala, quem decide, quem lembra), o que fazer com o rastro pendente do Dia 9, e como organizar os resumos de conceitos no Obsidian.
 - Resposta: a IA propôs começar pela arquitetura no papel e guiou com quatro perguntas (partir as funções mistas, o armazenamento vazio, a quarta sala, o dono do baú); ensinou o ciclo branch + PR na prática; rascunhou o ARQUITETURA.md — que eu expliquei em voz alta antes do merge; localizou o vault no disco e escreveu a nota de conceitos do dia com callouts, wikilinks e mermaid.
-- O que mudei/decidi: escolhi começar pela arquitetura; decidi as quatro salas (menu na entrada, mostrar_numeros nos relatórios); entendi que o baú não tem dono — passa por todas e volta para o arquivo; e pedi que a IA salve o resumo de conceitos no meu vault no fim de cada sessão.  
+- O que mudei/decidi: escolhi começar pela arquitetura; decidi as quatro salas (menu na entrada, mostrar_numeros nos relatórios); entendi que o baú não tem dono — passa por todas e volta para o arquivo; e pedi que a IA salve o resumo de conceitos no meu vault no fim de cada sessão.
+
+## Dia 11
+- Pergunta: como fazer o armazenamento — o nome do arquivo, o formato, e um passo a passo explicativo do salvar.
+- Resposta: a IA me deu as peças (with, json.dump, encoding), o passo a passo para eu digitar, testou o José no pergaminho provando o acento, destrinchou o with e o dump quando eu disse "não sei" na Regra 4, e investigou o mistério do herois.json teimando no git status — o commit não tinha levado a linha do .gitignore. Me ensinou o git check-ignore.
+- O que mudei/decidi: escolhi o nome herois.json; primeiro decidi commitar o arquivo de dados, e depois de ouvir o argumento mudei de ideia — dado gerado a cada execução fica no .gitignore.  
 
 
 ## Dia 9 
