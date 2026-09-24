@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 # segredo local do Claude Code: este repositório é público, esta linha nunca pode sair daqui
 .claude/settings.json
+# dado gerado a cada execução: cada pessoa que rodar cria o seu
+herois.json
