@@ -7,3 +7,21 @@ def salvar_herois(herois):
         json.dump(herois, arquivo, indent=2, ensure_ascii=False)
 
 
+def carregar_herois():
+    try:
+        with open("herois.json", "r", encoding="utf-8") as arquivo:
+            return json.load(arquivo)
+    except FileNotFoundError:
+        print("Nenhum pergaminho encontrado — a guilda começa vazia.")
+        return []
+    except json.JSONDecodeError:
+        print("O pergaminho está rasgado — a guilda começa vazia.")
+        return []
+
+
+    
+
+
+    
+
+
