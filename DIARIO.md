@@ -49,4 +49,9 @@
 ## Dia 11 (24/09/26)
 - O que fiz: criei o armazenamento.py — a salvar_herois grava o baú no pergaminho herois.json em JSON, com o José saindo acentuado; decidi que o arquivo de dados fica fora do repositório e aprendi o git check-ignore. Dois PRs mergeados (o módulo e a linha do .gitignore).
 - Onde travei: na explicação da Regra 4 — o with e o json.dump eu não sabia explicar, e a IA destrinchou linha por linha até eu re-explicar com as minhas palavras; e no mistério do herois.json que continuava no git status — o commit tinha levado só o armazenamento.py (editor aberto não é linha salva).
-- O que entendi hoje: JSON é serialização — traduz estrutura da memória em texto e de volta; o with é o guarda-chuva que fecha o arquivo aconteça o que acontecer; "w" é o modo gravar; encoding utf-8 + ensure_ascii False são as duas chaves anti-"JosÃ©"; e dado gerado a cada execução não entra no repo — vai para o .gitignore. 
+- O que entendi hoje: JSON é serialização — traduz estrutura da memória em texto e de volta; o with é o guarda-chuva que fecha o arquivo aconteça o que acontecer; "w" é o modo gravar; encoding utf-8 + ensure_ascii False são as duas chaves anti-"JosÃ©"; e dado gerado a cada execução não entra no repo — vai para o .gitignore.
+
+## Dia 12 (27/09/26)
+- O que fiz: escrevi a carregar_herois — o espelho do salvar (modo "r", json.load, return) — e, depois de ver os dois monstros explodirem na minha frente (FileNotFoundError e JSONDecodeError), armei os dois caçadores try/except com avisos em português. O critério 4 do Ato cumprido na prática, no oitavo PR.
+- Onde travei: no traceback longo do JSON rasgado — quatro andares de arquivos internos do Python; e duvidei de mim mesmo achando que o primeiro except nem existia — ele estava lá, só não era o caçador daquele monstro.
+- O que entendi hoje: exceção é um erro que interrompe o programa se ninguém capturar; try/except é o caçador específico — capturar Exception esconderia bugs de verdade; no traceback longo, a regra é pular os arquivos dos outros e achar o meu; e "r" lê sem apagar, json.load reconstrói e o return entrega. 
