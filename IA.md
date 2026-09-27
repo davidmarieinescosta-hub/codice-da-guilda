@@ -55,7 +55,12 @@
 ## Dia 11
 - Pergunta: como fazer o armazenamento — o nome do arquivo, o formato, e um passo a passo explicativo do salvar.
 - Resposta: a IA me deu as peças (with, json.dump, encoding), o passo a passo para eu digitar, testou o José no pergaminho provando o acento, destrinchou o with e o dump quando eu disse "não sei" na Regra 4, e investigou o mistério do herois.json teimando no git status — o commit não tinha levado a linha do .gitignore. Me ensinou o git check-ignore.
-- O que mudei/decidi: escolhi o nome herois.json; primeiro decidi commitar o arquivo de dados, e depois de ouvir o argumento mudei de ideia — dado gerado a cada execução fica no .gitignore.  
+- O que mudei/decidi: escolhi o nome herois.json; primeiro decidi commitar o arquivo de dados, e depois de ouvir o argumento mudei de ideia — dado gerado a cada execução fica no .gitignore.
+
+## Dia 12
+- Pergunta: como escrever a carregar_herois (eu nunca tinha visto isso no meu curso) e por que o herois.json sumiu do VSCode e acusava erro.
+- Resposta: a IA me deu o passo a passo do espelho (três trocas: modo "r", json.load, return); me fez reproduzir os dois monstros antes de me dar a arma (try/except); explicou o traceback longo — pular os arquivos dos outros e achar o meu; confirmou que o primeiro except já existia quando duvidei; e provou os três mundos num teste só.
+- O que mudei/decidi: escrevi as mensagens de erro em português e escolhi o return [] como baú honesto — quando não há pergaminho (ou ele está rasgado), a guilda começa vazia e o programa segue vivo.  
 
 
 ## Dia 9 
