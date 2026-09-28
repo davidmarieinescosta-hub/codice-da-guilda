@@ -1,4 +1,7 @@
-herois = []
+import armazenamento
+
+
+
 def cadastrar_heroi():
     nome = input("Nome do herói: ")
     classe = input("Classe: ")
@@ -65,7 +68,10 @@ def menu():
         opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
     print("agora você conhece a guilda")
 
+herois = armazenamento.carregar_herois()
 menu()
+armazenamento.salvar_herois(herois)
+
 
 
 
