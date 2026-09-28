@@ -60,7 +60,12 @@
 ## Dia 12
 - Pergunta: como escrever a carregar_herois (eu nunca tinha visto isso no meu curso) e por que o herois.json sumiu do VSCode e acusava erro.
 - Resposta: a IA me deu o passo a passo do espelho (três trocas: modo "r", json.load, return); me fez reproduzir os dois monstros antes de me dar a arma (try/except); explicou o traceback longo — pular os arquivos dos outros e achar o meu; confirmou que o primeiro except já existia quando duvidei; e provou os três mundos num teste só.
-- O que mudei/decidi: escrevi as mensagens de erro em português e escolhi o return [] como baú honesto — quando não há pergaminho (ou ele está rasgado), a guilda começa vazia e o programa segue vivo.  
+- O que mudei/decidi: escrevi as mensagens de erro em português e escolhi o return [] como baú honesto — quando não há pergaminho (ou ele está rasgado), a guilda começa vazia e o programa segue vivo.
+
+## Dia 13
+- Pergunta: qual import é mais eficiente, em que documento escrever as linhas da integração, e conferir se o que eu fiz estava certo.
+- Resposta: a IA mostrou que os dois imports têm a mesma eficiência — o eixo certo é legibilidade; guiou os três atos da ignição (carregar → menu → salvar); provou a memória com duas execuções seguidas e revelou o "Mafo" gravado no pergaminho; e corrigiu o endereço da docstring (primeira instrução da função, senão o Python a descarta).
+- O que mudei/decidi: escolhi o import armazenamento pela origem explícita; matei o herois = [] da linha 1 — o carregar virou a única fonte do baú; e escrevi as docstrings com as minhas palavras.  
 
 
 ## Dia 9 
