@@ -54,4 +54,9 @@
 ## Dia 12 (27/09/26)
 - O que fiz: escrevi a carregar_herois — o espelho do salvar (modo "r", json.load, return) — e, depois de ver os dois monstros explodirem na minha frente (FileNotFoundError e JSONDecodeError), armei os dois caçadores try/except com avisos em português. O critério 4 do Ato cumprido na prática, no oitavo PR.
 - Onde travei: no traceback longo do JSON rasgado — quatro andares de arquivos internos do Python; e duvidei de mim mesmo achando que o primeiro except nem existia — ele estava lá, só não era o caçador daquele monstro.
-- O que entendi hoje: exceção é um erro que interrompe o programa se ninguém capturar; try/except é o caçador específico — capturar Exception esconderia bugs de verdade; no traceback longo, a regra é pular os arquivos dos outros e achar o meu; e "r" lê sem apagar, json.load reconstrói e o return entrega. 
+- O que entendi hoje: exceção é um erro que interrompe o programa se ninguém capturar; try/except é o caçador específico — capturar Exception esconderia bugs de verdade; no traceback longo, a regra é pular os arquivos dos outros e achar o meu; e "r" lê sem apagar, json.load reconstrói e o return entrega.
+
+## Dia 13 (28/09/26)
+- O que fiz: integrei o ciclo do dia — a ignição em três atos (carregar → menu → salvar) — e vi o programa lembrar dos heróis entre duas vidas; depois documentei os contratos do armazenamento com type hints e docstrings. Três PRs no dia.
+- Onde travei: na explicação do "herois = armazenamento.carregar_herois()" — eu disse que herois era igual ao armazenamento, quando na verdade a caixa RECEBE o baú que a função devolve; e na docstring fora do endereço — ela precisa ser a primeira instrução da função, senão é carta morta.
+- O que entendi hoje: o import do próprio módulo faz as salas conversarem; a ignição vive no escopo global, por isso as funções enxergam o baú; a memória guarda até os erros (o "Mafo" ficou gravado no pergaminho); e type hints + docstrings documentam o contrato da função sem mudar o comportamento. 
