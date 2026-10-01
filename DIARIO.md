@@ -59,4 +59,9 @@
 ## Dia 13 (28/09/26)
 - O que fiz: integrei o ciclo do dia — a ignição em três atos (carregar → menu → salvar) — e vi o programa lembrar dos heróis entre duas vidas; depois documentei os contratos do armazenamento com type hints e docstrings. Três PRs no dia.
 - Onde travei: na explicação do "herois = armazenamento.carregar_herois()" — eu disse que herois era igual ao armazenamento, quando na verdade a caixa RECEBE o baú que a função devolve; e na docstring fora do endereço — ela precisa ser a primeira instrução da função, senão é carta morta.
-- O que entendi hoje: o import do próprio módulo faz as salas conversarem; a ignição vive no escopo global, por isso as funções enxergam o baú; a memória guarda até os erros (o "Mafo" ficou gravado no pergaminho); e type hints + docstrings documentam o contrato da função sem mudar o comportamento. 
+- O que entendi hoje: o import do próprio módulo faz as salas conversarem; a ignição vive no escopo global, por isso as funções enxergam o baú; a memória guarda até os erros (o "Mafo" ficou gravado no pergaminho); e type hints + docstrings documentam o contrato da função sem mudar o comportamento.
+
+## Dia 14 (01/10/26)
+- O que fiz: planejei a divisão dos módulos — as seis funções passaram pela mesa de operação, cada uma partida em pedaços de falar e decidir, com destino e troca de roupa. Saí com o plano completo das cinco salas: cli, regras, relatorios, armazenamento e main.
+- Onde travei: mandei a buscar_heroi para o armazenamento — a regra de bolso me corrigiu (arquivo → armazenamento; decisão → regras); e não lembrava o valor surpresa do Dia 5 — o None voltou com prova.
+- O que entendi hoje: o append fica com quem segura o baú (a portaria), não com a função pura; o silêncio da busca vira None — resposta explícita que o is None reconhece; o relatório devolve dicionário, repetindo a justificativa do Dia 2; e o main.py é o maestro — a ignição não mora na cli. 

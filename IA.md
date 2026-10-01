@@ -65,7 +65,12 @@
 ## Dia 13
 - Pergunta: qual import é mais eficiente, em que documento escrever as linhas da integração, e conferir se o que eu fiz estava certo.
 - Resposta: a IA mostrou que os dois imports têm a mesma eficiência — o eixo certo é legibilidade; guiou os três atos da ignição (carregar → menu → salvar); provou a memória com duas execuções seguidas e revelou o "Mafo" gravado no pergaminho; e corrigiu o endereço da docstring (primeira instrução da função, senão o Python a descarta).
-- O que mudei/decidi: escolhi o import armazenamento pela origem explícita; matei o herois = [] da linha 1 — o carregar virou a única fonte do baú; e escrevi as docstrings com as minhas palavras.  
+- O que mudei/decidi: escolhi o import armazenamento pela origem explícita; matei o herois = [] da linha 1 — o carregar virou a única fonte do baú; e escrevi as docstrings com as minhas palavras.
+
+## Dia 14
+- Pergunta: se o plano no papel era exigência do projeto, qual desenho deixaria o programa mais completo, e qual organização ficaria melhor para a listagem, os números e o menu.
+- Resposta: a IA esclareceu que o papel é exigência do Rito II (não dos critérios de aceite), recomendou com justificativas os desenhos — relatório prepara e cli imprime (B), dicionário para os três números, main.py como maestro — me relembrou o None com prova, e corrigiu a sala da busca (decisão vai para regras, não armazenamento).
+- O que mudei/decidi: escolhi conversa agora e papel na reta final do Ato; fechei as escolhas B, dicionário e main.py; e montei o plano completo das cinco salas, começando a implementação pela regras.py.  
 
 
 ## Dia 9 
