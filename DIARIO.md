@@ -65,4 +65,9 @@
 - O que fiz: planejei a divisão dos módulos — as seis funções passaram pela mesa de operação, cada uma partida em pedaços de falar e decidir, com destino e troca de roupa. Saí com o plano completo das cinco salas: cli, regras, relatorios, armazenamento e main.
 - Onde travei: mandei a buscar_heroi para o armazenamento — a regra de bolso me corrigiu (arquivo → armazenamento; decisão → regras); e não lembrava o valor surpresa do Dia 5 — o None voltou com prova.
 - O que entendi hoje: o append fica com quem segura o baú (a portaria), não com a função pura; o silêncio da busca vira None — resposta explícita que o is None reconhece; o relatório devolve dicionário, repetindo a justificativa do Dia 2; e o main.py é o maestro — a ignição não mora na cli.
-- Adendo (2ª sessão): implementei o regras.py — as três funções puras, testadas trabalhando juntas — e mergeei no 14º PR. Na Regra 4, achei que a busca ia imprimir o "não encontrado"; a correção: o conselho devolve, a portaria fala. Entendi o pipe `|` das placas ("dicionário OU None") e vi a primeira sala do castelo de pé. 
+- Adendo (2ª sessão): implementei o regras.py — as três funções puras, testadas trabalhando juntas — e mergeei no 14º PR. Na Regra 4, achei que a busca ia imprimir o "não encontrado"; a correção: o conselho devolve, a portaria fala. Entendi o pipe `|` das placas ("dicionário OU None") e vi a primeira sala do castelo de pé.
+
+## Dia 15 (02/10/26)
+- O que fiz: construí a segunda sala — relatorios.py com a mostrar_numeros devolvendo o dicionário {"quantos", "media", "mais_forte"} e a formatar_lista devolvendo as frases prontas. Decidi o guarda do baú vazio (opção A) e mergeei no 16º PR.
+- Onde travei: repeti o fantasma do dia anterior — disse que a função "ia printar o dicionário vazio"; a correção definitiva: sala que conta só devolve — o print do teste era meu, no REPL.
+- O que entendi hoje: o guarda da porta (if len == 0) responde a pergunta legítima da guilda vazia com a verdade (zero, zero, None); o dicionário do relatório repete a justificativa do Dia 2; e procurar print em regras ou relatorios é não achar — o critério 2 em carne viva. 

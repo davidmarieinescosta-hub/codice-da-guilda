@@ -71,7 +71,12 @@
 - Pergunta: se o plano no papel era exigência do projeto, qual desenho deixaria o programa mais completo, e qual organização ficaria melhor para a listagem, os números e o menu.
 - Resposta: a IA esclareceu que o papel é exigência do Rito II (não dos critérios de aceite), recomendou com justificativas os desenhos — relatório prepara e cli imprime (B), dicionário para os três números, main.py como maestro — me relembrou o None com prova, e corrigiu a sala da busca (decisão vai para regras, não armazenamento).
 - O que mudei/decidi: escolhi conversa agora e papel na reta final do Ato; fechei as escolhas B, dicionário e main.py; e montei o plano completo das cinco salas, começando a implementação pela regras.py.
-- Adendo (2ª sessão): pedi à IA para organizar o arquivo e preencher as docstrings; ela testou as três funções — inclusive a busca que devolve None e o filtro que devolve lista vazia — e me corrigiu na explicação: a função pura não imprime, ela devolve; quem fala é a cli.  
+- Adendo (2ª sessão): pedi à IA para organizar o arquivo e preencher as docstrings; ela testou as três funções — inclusive a busca que devolve None e o filtro que devolve lista vazia — e me corrigiu na explicação: a função pura não imprime, ela devolve; quem fala é a cli.
+
+## Dia 15
+- Pergunta: qual opção adotar para o baú vazio na mostrar_numeros, e preencher as docstrings do relatorios.
+- Resposta: a IA recomendou a opção A (o guarda na porta), organizou o arquivo com as transformações do meu próprio código, preencheu as docstrings e me corrigiu mais uma vez: a função não imprime — devolve; o print do teste era meu, no REPL.
+- O que mudei/decidi: escolhi A porque o relatório responde com a verdade da guilda vazia — zero, zero, ninguém — e descartei deixar explodir, que esconderia a resposta de uma pergunta legítima.  
 
 
 ## Dia 9 
