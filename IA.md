@@ -85,3 +85,8 @@
 - Pergunta: como enviar o repositório para o mestre, que me passou o e-mail dele.
 - Resposta: a IA mostrou que o repositório público se envia pelo link (e pelo git clone), avisou que o ZIP do GitHub não carrega a história dos commits — e rascunhou o e-mail. Depois, quando o Ato II chegou, mapeou os 7 critérios e propôs a sequência de etapas.
 - O que mudei/decidi: enviei o link do repositório ao mestre e recebi o Ato II e decidi que a primeira etapa dele seria a arquitetura.
+
+## Dia 15 (3ª sessão)
+- Pergunta: como construir o main.py e o que fazer com os dois prints que sobraram no armazenamento.
+- Resposta: a IA deu o esqueleto do maestro (carregar → menu → salvar, com o guarda `if __name__ == "__main__"`) e, nas sondas de conferência, achou dois furos: a correção da chave commitada direto na main (e sem push) e os prints fora da interface. Para o Furo 1 propôs o resgate (branch nascendo no commit que já existe + `reset --hard origin/main` + PR); para o Furo 2 propôs devolver `(baú, aviso)` em vez de imprimir. Testou os três mundos do pergaminho e o codice.py legado.
+- O que mudei/decidi: resgatei o commit que tinha ido direto para a main — criei a branch nascendo nele, rebobinei a main e mandei a correção por PR — porque é necessário para respeitar as regras do Ato. E aceitei a mudança do armazenamento: ele deixa de imprimir e devolve (baú, aviso), porque é melhor para o programa em si.
