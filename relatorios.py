@@ -12,7 +12,7 @@ def mostrar_numeros(herois: list) -> dict:
         total = total + heroi['nivel']
         if heroi['nivel'] > mais_forte:
             mais_forte = heroi['nivel']
-            nome_mais_forte = heroi['   nome']
+            nome_mais_forte = heroi['nome']
     return {"quantos": len(herois), "media": total / len(herois), "mais_forte": nome_mais_forte}
 
 
