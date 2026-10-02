@@ -76,7 +76,9 @@
 ## Dia 15
 - Pergunta: qual opção adotar para o baú vazio na mostrar_numeros, e preencher as docstrings do relatorios.
 - Resposta: a IA recomendou a opção A (o guarda na porta), organizou o arquivo com as transformações do meu próprio código, preencheu as docstrings e me corrigiu mais uma vez: a função não imprime — devolve; o print do teste era meu, no REPL.
-- O que mudei/decidi: escolhi A porque o relatório responde com a verdade da guilda vazia — zero, zero, ninguém — e descartei deixar explodir, que esconderia a resposta de uma pergunta legítima.  
+- O que mudei/decidi: escolhi A porque o relatório responde com a verdade da guilda vazia — zero, zero, ninguém — e descartei deixar explodir, que esconderia a resposta de uma pergunta legítima.
+- Adendo (2ª sessão): pedi para testar o menu; a IA provou o "None, é o mais forte" da guilda vazia e me deu o padrão is None (irmão do buscar). Perguntei por que ela anda entregando mais código pronto — ela explicou a diferença entre transformação (pistas) e montagem (andaime) e me desafiou a reescrever o cli.py de memória na próxima sessão.
+- O que mudei/decidi: aceitei o desafio da reescrita de memória — 15 minutos, sem olhar, como treino do critério Modificar do Rito.  
 
 
 ## Dia 9 
