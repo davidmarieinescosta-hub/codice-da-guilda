@@ -41,6 +41,14 @@
 - O que entendi hoje: que o README é a vitrine e responde três perguntas — o que é, como rodar, o que funciona — garantindo o critério de rodar em outra máquina; que markdown usa ``` para blocos de código; e que justificativa de decisão (a língua) não precisa pedir desculpas na vitrine — ela mora no Rito.
 - Adendo: descobri que meu GitHub estava 15 commits atrás — o commit local não é publicação; o push é a terceira camada do git. Rodei o push e o repositório público agora mostra o projeto inteiro.
 
+## Dia 9 (15/09/26)
+- O que fiz: enviei o link do repositório ao mestre e recebi dele o Ato II. No caminho,
+  aprendi que repositório público se envia pelo link (ou pelo `git clone`) — o ZIP do
+  GitHub baixa os arquivos, mas não carrega a história dos commits.
+- Onde travei: em nada.
+- O que entendi hoje: como apresentar os meus trabalhos para o mestre.
+
+
 ## Dia 10 (23/09/26)
 - O que fiz: comecei o Ato II — primeiro ciclo branch + PR (o rastro pendente do Dia 9), decidi a arquitetura das quatro salas (entrada, decisões, relatórios, armazenamento), escrevi o ARQUITETURA.md e mergeei no segundo PR, e criei a nota de conceitos do dia no Obsidian com callouts, wikilinks e mermaid.
 - Onde travei: na pergunta 4 da arquitetura — quem é o dono do baú? Demorei a ver que ninguém: ele circula por parâmetro e volta para o arquivo; e na hora de passar o caminho do vault (o link interno do Obsidian não é o caminho do disco — a IA achou a pasta no Explorador).
