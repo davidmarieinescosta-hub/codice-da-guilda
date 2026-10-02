@@ -5,8 +5,8 @@ import cli
 
 def main() -> None:
     """Carrega a guilda, roda o menu e salva no fim."""
-    herois = armazenamento.carregar_herois()
-    cli.menu(herois)
+    herois, aviso = armazenamento.carregar_herois()
+    cli.menu(herois, aviso)
     armazenamento.salvar_herois(herois)
 
 

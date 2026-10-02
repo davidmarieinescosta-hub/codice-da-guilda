@@ -8,17 +8,15 @@ def salvar_herois(herois: list) -> None:
         json.dump(herois, arquivo, indent=2, ensure_ascii=False)
 
 
-def carregar_herois() -> list:
-    """Carrega os heróis do pergaminho; baú vazio se ele não existir ou estiver rasgado."""
+def carregar_herois() -> tuple[list, str | None]:
+    """Carrega os heróis do pergaminho e devolve (baú, aviso) — aviso é None quando tudo corre bem."""
     try:
         with open("herois.json", "r", encoding="utf-8") as arquivo:
-            return json.load(arquivo)
+            return json.load(arquivo), None
     except FileNotFoundError:
-        print("Nenhum pergaminho encontrado — a guilda começa vazia.")
-        return []
+        return [], "Nenhum pergaminho encontrado — a guilda começa vazia."
     except json.JSONDecodeError:
-        print("O pergaminho está rasgado — a guilda começa vazia.")
-        return []
+        return [], "O pergaminho está rasgado — a guilda começa vazia."
 
 
 

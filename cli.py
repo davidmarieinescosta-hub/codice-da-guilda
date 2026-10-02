@@ -3,8 +3,10 @@ import regras
 import relatorios
 
 
-def menu(herois: list) -> None:
+def menu(herois: list, aviso: str | None) -> None:
     """Roda o menu da guilda até o usuário escolher sair."""
+    if aviso is not None:
+        print(aviso)
     opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
     while opções != "sair":
         if opções == "cadastrar":

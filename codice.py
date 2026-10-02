@@ -68,7 +68,9 @@ def menu():
         opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
     print("agora você conhece a guilda")
 
-herois = armazenamento.carregar_herois()
+herois, aviso = armazenamento.carregar_herois()
+if aviso is not None:
+    print(aviso)
 menu()
 armazenamento.salvar_herois(herois)
 
