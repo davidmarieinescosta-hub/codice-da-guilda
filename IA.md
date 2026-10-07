@@ -95,3 +95,19 @@
 - Pergunta: se a IA conseguia ler um link de artifact do Claude — e, depois que eu baixei o arquivo, o que o documento do programa (a Jornada do Escriba) dizia sobre o Ato II.
 - Resposta: a IA não conseguiu ler o link (o conteúdo fica atrás do meu login; ela recebeu só a casca da página) e leu o HTML que eu baixei, extraindo o texto do arquivo. Comparando o documento com o repositório, achou três coisas que ela mesma tinha me dito errado antes: o argparse é requisito do Ato II, o PR com correções do mestre é critério separado da Sabotagem I, e o README não é critério de aceite do ato. Depois rascunhou o relatório corrigido para o mestre, que eu copiei e enviei.
 - O que mudei/decidi: eu mandei o documento para a IA achando que era a melhor opção para ter certeza que estava avançando de forma correta em relação ao projeto, e com isso descobri que tinha algumas coisas faltando que precisavam ser resolvidas e reeditadas. Se eu não tivesse feito isso, o projeto ia ser entregue incompleto.
+
+## Dia 16
+- Pergunta: como se escreve argparse em Python — eu nunca tinha visto isso no curso, e no meio do caminho perguntei o que ia dentro dos parênteses vazios.
+- Resposta: a IA me deu o mapa das quatro peças sem código (só os nomes e a ordem), me devolveu para tentar e, a cada erro, rodou o meu arquivo para provar — a ligação errada (chamar no módulo em vez de chamar no objeto), o `AttributeError` que prova que o `parse_args` não mora no `argparse`, e as saídas do `Namespace` nos três casos (com `--nome`, sem nada, e o `--help` que o argparse escreve sozinho). Explicou de onde vêm os valores do `parse_args` vazio (a linha de comando) e que o ponto do `parser.parse_args()` é a mesma regra do `herois.append()` do Ato I. No fim me aplicou o teste de memória do critério Modificar e, quando eu disse que não lembrava as letras, mudou o método do treino: parar de copiar olhando (isso treina o olho) e passar a tentar de memória e corrigir só o erro (isso treina a mão).
+- O que mudei/decidi: decidi apagar o `teste_argparse.py` em vez de commitá-lo, porque o repositório é o programa e o diário é a memória do aprendizado — um rascunho solto na raiz viraria lixo que eu não saberia se posso apagar daqui a três semanas, e o argparse de verdade entra no `main.py` na próxima sessão. E decidi que o meu treino passa a ser de detalhe, não de conceito: tentar de memória e corrigir só o erro, em vez de copiar o arquivo várias vezes.
+
+## Dia 16
+- Pergunta: como se escreve argparse em Python — eu nunca tinha visto isso no curso.
+- Resposta: a IA me deu o mapa das quatro peças SEM código (só os nomes e a ordem), me devolveu
+  para tentar, e a cada erro rodou meu arquivo para provar — a ligação errada (chamar no módulo em
+  vez do objeto), o AttributeError do parse_args, as saídas do Namespace e o --help que o argparse
+  escreve sozinho. Explicou de onde vêm os valores do parse_args vazio (a linha de comando, sys.argv)
+  e que o ponto do parser.parse_args() é a mesma regra do herois.append() do Ato I.
+- O que mudei/decidi: eu decidi que o programa ia ser com comandos e com o menu porque assim o codice poderia ser usado e interpretado tanto para humanos e para outros programas. Também decidi em apagar o teste_argparse.py .
+
+
