@@ -112,4 +112,20 @@
   e que o ponto do parser.parse_args() é a mesma regra do herois.append() do Ato I.
 - O que mudei/decidi: eu decidi que o programa ia ser com comandos e com o menu porque assim o codice poderia ser usado e interpretado tanto para humanos e para outros programas. Também decidi em apagar o teste_argparse.py .
 
+## Dia 17
+- Pergunta: como fazer os subcomandos do argparse (`add_subparsers`) — e, no fim do dia, já sem tempo, se a IA escrevia o código completo.
+- Resposta: a IA me deu as três peças novas pelo papel (o balcão, o `add_parser`, o `args.comando`), sem o código montado, e destravou cada linha com a regra do "dono da ação" em vez de escrever por mim. Depois, quando eu pedi o código completo por falta de tempo, ela escreveu o `main.py` (o parser + o roteamento dos comandos) e o refactor do `cli.py` (extrair as funções de exibição para o menu e os comandos dividirem as mesmas salas) — **mas com uma condição**: nada entra em commit até eu conseguir explicar cada função em voz alta e refazer os pedaços novos de memória. Ela testou os doze casos (incluindo o menu antigo, para provar que não mudou de comportamento) e apagou o `herois.json` de teste.
+- O que mudei/decidi (escrito pela IA a partir do que eu decidi falando — conferir e ajustar): escolhi a **opção A** (o parser dentro do `main.py`) em vez de criar uma sala nova `comandos.py`, porque o main já é o maestro e a arquitetura documentada tem cinco salas — criar a sexta para vinte linhas não se paga em documentação. E decidi **aceitar o código pronto com a condição de não commitar nada**: eu estava sem tempo, mas "amanhã a gente estuda" é exatamente o "depois eu vejo" que a Regra 4 proíbe — então o código fica no disco como material de estudo e a dívida fica registrada.
+
+## Dia 17
+- Pergunta: como fazer os subcomandos do argparse (`add_subparsers`), e no fim do dia — já sem tempo —
+  se a IA escrevia o código completo.
+- Resposta: a IA me deu as três peças novas pelo papel (o balcão, o add_parser e o args.comando), sem
+  o código montado, e uma dica sobre o ponto para eu escrever. Depois, quando eu pedi o código
+  completo por falta de tempo, ela escreveu o `main.py` (parser + roteamento) e o refactor do
+  `cli.py` (extrair as funções de exibição), MAS com uma condição: nada entra em commit até eu
+  conseguir explicar cada função em voz alta e reescrever os pedaços novos de memória.
+- O que mudei/decidi: A minha principal decisão de hoje, foi em relação da esolha de como eu ia decidir o lugar onde moraria o paser, e eu decidi que ele ficaria na main.py, já que ele ja é o maestro por definição.
+
+
 
