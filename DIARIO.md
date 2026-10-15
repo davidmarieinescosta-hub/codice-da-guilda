@@ -131,3 +131,17 @@
   a rodar, `TypeError` quebra no meio da execução.
 - Adendo (dívida paga): o `main.py` e o `cli.py` entraram em commit hoje, depois da Regra 4 — a
   dívida registrada no fim do Dia 17 está encerrada.
+- Adendo (faxina, vitrine e o `gh` — fim do dia): autorizei a IA a apagar as 58 branches que já
+  estavam dentro da `main`, a tirar o "level:" em inglês das mensagens ao usuário e a atualizar o
+  `README.md` e o `CLAUDE.md`, que ainda contavam o Ato I. Instalei o GitHub CLI (`gh`) e criei os
+  dois PRs (#32 e #33) pelo terminal, eu mesmo digitando os comandos.
+- Onde travei (no fim do dia): no `PATH`. Instalei o `gh` e o comando não era reconhecido, porque o
+  terminal lê a lista de pastas onde procura programas quando ele **nasce** — e o terminal de dentro
+  do VS Code herda a lista do VS Code, que estava aberto antes da instalação. A IA também me deu um
+  diagnóstico errado nessa hora ("a pasta não está no PATH"): ela tinha escondido a mensagem de erro
+  do comando. Ela mesma achou o erro e me mostrou.
+- O que entendi (o `gh`): o que ele faz que o `git` não faz. Criar PR, pedir revisão e mergear PR
+  **não existem no Git** — são coisas da API do GitHub, que é o site. O `git` guarda os commits; o
+  `gh` conversa com o GitHub. E aprendi que o botão verde do PR não aparecer dependia de uma checagem
+  que o GitHub faz depois que a página abre, não de a branch estar errada.
+- Fim do Ato II: falei com o mestre e ele autorizou o início do Ato III.
