@@ -13,7 +13,7 @@ def cadastrar_heroi():
 
 def listar_herois():
     for heroi in herois:
-        print(f"{heroi['nome']}, {heroi['classe']}, level: {heroi['nivel']} ")
+        print(f"{heroi['nome']}, {heroi['classe']}, nível: {heroi['nivel']}")
         
 
 
@@ -61,7 +61,7 @@ def menu():
             classe = input("Qual classe quer filtrar? ")
             aprovados = filtrar_herois_por_classe(classe)
             for heroi in aprovados:
-                print(f"{heroi['nome']}, {heroi['classe']}, level : {heroi['nivel']} ")
+                print(f"{heroi['nome']}, {heroi['classe']}, nível: {heroi['nivel']}")
             
         elif opções == "números":
             mostrar_numeros()

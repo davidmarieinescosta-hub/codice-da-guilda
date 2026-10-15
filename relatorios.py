@@ -20,5 +20,5 @@ def formatar_lista(herois: list) -> list:
     """Devolve a listagem da guilda pronta para exibição."""
     linhas = []
     for heroi in herois:
-        linhas.append(f"{heroi['nome']}, {heroi['classe']}, level: {heroi['nivel']}")
+        linhas.append(f"{heroi['nome']}, {heroi['classe']}, nível: {heroi['nivel']}")
     return linhas
