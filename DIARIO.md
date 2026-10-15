@@ -145,3 +145,18 @@
   `gh` conversa com o GitHub. E aprendi que o botão verde do PR não aparecer dependia de uma checagem
   que o GitHub faz depois que a página abre, não de a branch estar errada.
 - Fim do Ato II: falei com o mestre e ele autorizou o início do Ato III.
+- Adendo (a resposta do mestre): ele disse que estava tudo certo e que eu podia seguir. Ele não
+  pediu correção nenhuma no PR — e é aí que eu tive que decidir uma coisa que ninguém tinha me
+  avisado: **aprovação não é o mesmo que correção pedida**, e o critério do Ato II fala em "um PR
+  com correções pedidas pelo mestre". A IA me disse isso antes de fazer qualquer outra coisa e
+  não decidiu por mim. Eu escolhi não inventar correção para fechar critério: registro o que
+  aconteceu de verdade — houve revisão de fora e ela aprovou — e mando uma linha para o mestre
+  dizendo que, se ele tiver qualquer ajuste, mesmo pequeno, que me peça no PR.
+- Adendo (o merge e as branches): pedi que a IA fizesse o merge dos dois PRs e ela fez com **merge
+  commit**, que é a convenção dos 31 anteriores (não squash). As duas branches foram apagadas, aqui
+  e no GitHub, e a `main` voltou a ser a única.
+- O que entendi (o silêncio do comando): ao mergear, o `gh` não imprimiu **nada**. Silêncio não é
+  sucesso nem falha — quem responde é a fonte. A IA conferiu no GitHub em vez de comemorar o
+  silêncio: os dois PRs estavam `MERGED` (19:18:54 e 19:18:58) e a `main` já tinha andado. Ainda
+  apareceu de novo o `PATH` do dia: o `gh` não era encontrado no terminal dela, e ela teve que
+  chamar o programa pelo caminho completo.

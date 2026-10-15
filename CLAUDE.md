@@ -126,16 +126,22 @@ nenhuma.
 ## Estado do projeto (15/10/2026)
 
 - Remoto `origin` configurado (github.com/davidmarieinescosta-hub/codice-da-guilda).
-- **Ato II fechado, menos a revisão do mestre** — que é o único critério ainda em
-  aberto. O programa roda por comando (`python main.py listar`) e pelo menu
+- **Ato II fechado.** O mestre revisou e respondeu que estava tudo certo e que o autor
+  podia seguir. A revisão aprovou **sem pedir nenhuma correção** — e o critério do Ato
+  fala em "um PR com correções pedidas pelo mestre". A decisão registrada (do autor, em
+  15/10) é não fabricar uma correção para fechar o critério: fica escrito como o que foi,
+  uma revisão externa que aprovou. O programa roda por comando
+  (`python main.py listar`) e pelo menu
   (`python main.py --help` mostra tudo); os dados ficam no `herois.json`.
 - As cinco salas no lugar: main.py, cli.py, regras.py, relatorios.py,
   armazenamento.py — mais o codice.py do Ato I, guardado como história.
 - Toda mudança entra por branch + commit + PR; zero commit direto na `main`.
 - README.md e o "Estado do projeto" deste arquivo atualizados no Ato II.
 - DIARIO.md e IA.md preenchidos até o Dia 18.
-- O mestre já liberou o Ato III. Falta confirmar com ele: a revisão do PR do Ato II,
-  a Sabotagem I e a data do Rito de Passagem II.
+- Os PRs #32 e #33 foram mergeados em 15/10 (merge commit, como os 31 anteriores) e as
+  duas branches apagadas — a `main` é a única branch, local e no GitHub.
+- O mestre liberou o Ato III. Continua pendente pedir a ele: a Issue da Sabotagem I e a
+  data do Rito de Passagem II.
 - Conceitos do Ato II que ainda não têm casa no código: `finally`, `raise`,
   `requirements.txt`, CSV e módulos numa pasta.
 - .claude/settings.json contém credencial de API em texto puro. Está no .gitignore;
