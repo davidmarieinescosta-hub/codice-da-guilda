@@ -73,12 +73,17 @@ dele, não relatório para a IA.
 
 ## Visão geral
 
-Programa de terminal em Python chamado [codice.py](codice.py) que registra os heróis da
-guilda: cadastrar, listar, buscar pelo nome, filtrar por classe e mostrar números
-(quantos são, nível médio, quem é o mais forte).
+Programa de terminal em Python que registra os heróis da guilda: cadastrar, listar,
+buscar pelo nome, filtrar por classe e mostrar números (quantos são, nível médio,
+quem é o mais forte).
 
-Os dados vivem apenas em memória enquanto o programa roda — fechou, sumiu. Isso é
-deliberado (o Ato II resolve); não adicione persistência (arquivos, banco) aqui.
+O programa do Ato I era um arquivo só, o [codice.py](codice.py) — guardado como
+história. O Ato II o repartiu em cinco salas, cada uma com um emprego: `main.py` (o
+maestro), `cli.py` (a portaria), `regras.py` (as regras), `relatorios.py` (as
+contas), `armazenamento.py` (o baú). O autor continua explicando as cinco.
+
+Os dados vivem em `herois.json`, gravado a cada execução — por isso o arquivo está
+no .gitignore (é dado gerado, não código). No Ato I viviam só em memória.
 
 Todo o código de domínio é escrito em português (nomes de função, variáveis,
 mensagens ao usuário). Mantenha essa convenção ao adicionar código.
@@ -88,11 +93,13 @@ mensagens ao usuário). Mantenha essa convenção ao adicionar código.
 Rodar o programa:
 
 ```bash
-python codice.py
+python main.py            # sem comando nenhum, abre o menu
+python main.py listar     # ou direto um comando
+python main.py --help
 ```
 
 O ambiente virtual existe em .venv/ (Windows — binários em .venv/Scripts/), mas o
-programa só usa a biblioteca padrão do Python, então `python codice.py` basta. O venv
+programa só usa a biblioteca padrão do Python, então `python main.py` basta. O venv
 é convenção da comunidade: isola as dependências de cada projeto; aqui ainda não há
 nenhuma.
 
@@ -116,15 +123,21 @@ nenhuma.
 - No mínimo 20 commits, em pelo menos 8 dias diferentes, mensagens no imperativo.
 - Um .gitignore que o autor entende linha por linha.
 
-## Estado do projeto (14/09/2026)
+## Estado do projeto (15/10/2026)
 
 - Remoto `origin` configurado (github.com/davidmarieinescosta-hub/codice-da-guilda).
-- 18 commits em 8 dias diferentes, mensagens no imperativo.
-- codice.py completo: 6 funções (cadastrar, listar, buscar, filtrar por classe,
-  números, menu), roda com `python codice.py`; dados vivem em memória — a
-  persistência fica para o Ato II.
-- README.md escrito pelo autor: o que é, como rodar, o que já funciona.
-- DIARIO.md e IA.md preenchidos até o Dia 8.
+- **Ato II fechado, menos a revisão do mestre** — que é o único critério ainda em
+  aberto. O programa roda por comando (`python main.py listar`) e pelo menu
+  (`python main.py --help` mostra tudo); os dados ficam no `herois.json`.
+- As cinco salas no lugar: main.py, cli.py, regras.py, relatorios.py,
+  armazenamento.py — mais o codice.py do Ato I, guardado como história.
+- Toda mudança entra por branch + commit + PR; zero commit direto na `main`.
+- README.md e o "Estado do projeto" deste arquivo atualizados no Ato II.
+- DIARIO.md e IA.md preenchidos até o Dia 18.
+- O mestre já liberou o Ato III. Falta confirmar com ele: a revisão do PR do Ato II,
+  a Sabotagem I e a data do Rito de Passagem II.
+- Conceitos do Ato II que ainda não têm casa no código: `finally`, `raise`,
+  `requirements.txt`, CSV e módulos numa pasta.
 - .claude/settings.json contém credencial de API em texto puro. Está no .gitignore;
   nunca use `git add -f` nele nem copie o arquivo para outro lugar. Se algum dia for
   commitado, a chave precisa ser revogada.
