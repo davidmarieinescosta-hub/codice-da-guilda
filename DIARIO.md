@@ -109,3 +109,25 @@
 - Adendo (dívida aberta): o main.py e o cli.py novos estão no disco mas NÃO foram commitados —
   combinado com a IA: nada entra em commit até eu explicar cada função em voz alta e refazer os
   pedaços novos de memória (Regra 4). É a primeira coisa da próxima sessão.
+
+## Dia 18 (15/10/26)
+- O que fiz: comecei pela prova da mão — reescrevi de memória as peças novas dos subcomandos e rodei
+  os quatro casos, incluindo o `--nome` obrigatório. Consertei dois erros meus lendo o traceback (um
+  `TypeError` e um `SyntaxError`). Depois paguei a Regra 4 nas oito funções novas do `main.py` e do
+  `cli.py` — com a IA devolvendo pergunta em vez de resposta — e no fim os dois commits entraram: o
+  `cli.py` (extrair as funções de exibição) e o `main.py` (o argparse com os subcomandos). Pedi
+  também uma nota de estudo completa do argparse no Obsidian, porque pelo chat eu não consigo revisar
+  com calma.
+- Onde travei: nas três perguntas do conceito. Eu não sabia dizer o que o `dest` faz, por que cada
+  subparser só tem as suas opções, nem por que a `montar_parser` não lê a linha de comando — precisei
+  que a IA desenhasse o modelo dos três objetos, que nunca tinha sido mostrado. E errei a
+  `exibir_numeros` (disse que ela mostra o nível de cada membro) e repeti o padrão do Dia 16:
+  responder sobre a função pelo nome dela em vez de ler a linha.
+- O que entendi hoje: o modelo dos subcomandos — o balcão, o parser de cada comando e a gaveta
+  `comando`; que é o `dest` que dá nome a essa gaveta (sem ele a caixa volta vazia); e que cada
+  subparser tem só as opções que ele mesmo declarou, porque **declarar não é chamar**. Entendi também
+  que montar a fôrma e ler a linha de comando são dois empregos separados, porque o `parse_args` lê a
+  linha de comando do programa que está rodando. E as duas famílias de erro: `SyntaxError` nem chega
+  a rodar, `TypeError` quebra no meio da execução.
+- Adendo (dívida paga): o `main.py` e o `cli.py` entraram em commit hoje, depois da Regra 4 — a
+  dívida registrada no fim do Dia 17 está encerrada.
