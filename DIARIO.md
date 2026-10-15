@@ -95,13 +95,6 @@
 - O que entendi hoje: que o ponto em `parser.parse_args()` é a mesma regra do `herois.append()` do Ato I — o ponto diz de quem é a ação, por isso o `parse_args` mora no objeto e não no módulo (o Python provou com o erro: `module 'argparse' has no attribute 'parse_args'`); que o `input()` espera e o `parse_args()` busca, porque os dados já chegaram na linha de comando; e que o meu gap é de detalhe, não de conceito — o que muda o treino de amanhã.
 
 ## Dia 17 (13/10/26)
-- O que fiz: comecei pelo teste de memória do argparse — seis dias depois do Dia 16, escrevi as cinco linhas de cabeça e **rodou de primeira** (`Namespace(nome='Aldric')`), inclusive na versão melhor do print (`args.nome` em vez de `args`). Depois aprendi os **subcomandos** (as três peças novas: o balcão, o `add_parser` e o `args.comando`) e provei os quatro casos, incluindo um comando recusando a opção que não é dele (`listar --nome X` → erro). Então comecei o refactor do `cli.py` — extrair função — e **a IA escreveu o código completo** (o refactor da cli e o argparse no main.py), porque eu fiquei sem tempo.
-- Onde travei: na montagem dos subcomandos — entendi as peças isoladas, mas precisei que a IA apontasse "de quem é a ação" em cada linha (o `add_parser` mora no balcão; o `add_argument` do `--nome` mora no `buscar`). E travei no relógio: o dia acabou antes de eu fazer o refactor com as minhas mãos.
-- O que entendi hoje: que o ponto não é "sempre `parser`" mas **"o dono da ação"** — e por isso o mesmo ponto serve para o balcão e para o subparser; que **cada comando tem as opções dele** e o argparse recusa o resto, de graça; e que **o menu e os comandos são duas portas para a mesma casa** — é por isso que as funções da cli recebem por parâmetro em vez de perguntarem dentro delas.
-- Adendo (dívida aberta): o `main.py` e o `cli.py` novos estão no disco mas **NÃO commitados**. Combinado com a IA: nada entra em commit até eu explicar cada função em voz alta e refazer os pedaços novos de memória (Regra 4 — "nunca 'depois eu vejo'"). É a primeira coisa da próxima sessão.
-
-
-## Dia 17 (13/10/26)
 - O que fiz: comecei pelo teste de memória do argparse — seis dias depois, escrevi as cinco linhas de
   cabeça e rodou de primeira (`Namespace(nome='Aldric')`), inclusive a versão melhor do print. Depois
   aprendi os subcomandos (as três peças novas) e provei os quatro casos, incluindo um comando
@@ -113,3 +106,6 @@
   add_parser mora no balcão e o add_argument do --nome mora no buscar); que cada comando tem as
   opções dele e o argparse recusa o resto; e que o menu e os comandos são duas portas para a mesma
   casa — é por isso que as funções da cli recebem por parâmetro em vez de perguntarem.
+- Adendo (dívida aberta): o main.py e o cli.py novos estão no disco mas NÃO foram commitados —
+  combinado com a IA: nada entra em commit até eu explicar cada função em voz alta e refazer os
+  pedaços novos de memória (Regra 4). É a primeira coisa da próxima sessão.
