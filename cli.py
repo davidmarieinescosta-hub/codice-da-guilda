@@ -11,6 +11,9 @@ def exibir_aviso(aviso: str | None) -> None:
 
 def exibir_lista(herois: list) -> None:
     """Imprime a lista da guilda, um herói por linha."""
+    if len(herois) == 0:
+        print("Nenhum herói na guilda.")
+        return
     for linha in relatorios.formatar_lista(herois):
         print(linha)
 
@@ -27,6 +30,9 @@ def exibir_busca(herois: list, nome: str) -> None:
 def exibir_filtro(herois: list, classe: str) -> None:
     """Imprime os heróis da classe pedida."""
     aprovados = regras.filtrar_herois_por_classe(herois, classe)
+    if len(aprovados) == 0:
+        print(f"Nenhum herói na guilda com a classe de {classe}.")
+        return
     for linha in relatorios.formatar_lista(aprovados):
         print(linha)
 
