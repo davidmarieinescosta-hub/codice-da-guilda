@@ -160,12 +160,15 @@
   silêncio: os dois PRs estavam `MERGED` (19:18:54 e 19:18:58) e a `main` já tinha andado. Ainda
   apareceu de novo o `PATH` do dia: o `gh` não era encontrado no terminal dela, e ela teve que
   chamar o programa pelo caminho completo.
-- Achado no fim do dia (o silêncio do `listar`): rodei o programa depois de tudo, só para conferir
-  que os merges não tinham quebrado nada — e o `python main.py listar` não imprimiu **nada**. Não
-  era erro: a minha guilda está vazia (`herois.json` com `[]`) e a `exibir_lista` só percorre as
-  linhas prontas; com zero heróis, o laço não roda nenhuma vez e não sobra mensagem. A mesma coisa
-  acontece no `filtrar` quando nenhum herói é da classe pedida. Já o `buscar` ("Herói não
-  encontrado.") e o `números` ("Nenhum herói na guilda.") avisam — então são **duas funções que
-  falam e duas que ficam mudas na mesma situação**. Onde arrumar eu já sei dizer, pelo que aprendi
-  no Ato II: a frase é da portaria (`cli.py`), não do relatório, porque **a regra devolve dados, não
-  frases**. Fica para o Dia 19, e eu quero escrever esse pedaço sozinho.
+- Achado no fim do dia (o silêncio do `listar`) — **com o crédito corrigido no Dia 19**: a primeira
+  versão deste parágrafo dizia "rodei o programa e achei o buraco", mas quem rodou e quem achou foi
+  a IA; eu li a prova e decidi o que fazer com o achado. O que aconteceu de fato: a IA foi rodar o
+  programa só para conferir que os merges não tinham quebrado nada — e o `python main.py listar` não
+  imprimiu **nada**. Não era erro: a minha guilda está vazia (`herois.json` com `[]`) e a
+  `exibir_lista` só percorre as linhas prontas; com zero heróis, o laço não roda nenhuma vez e não
+  sobra mensagem. Chamando as funções direto, sem tocar no meu dado, ela provou que o `filtrar`
+  também fica mudo quando nenhum herói é da classe pedida. Já o `buscar` ("Herói não encontrado.")
+  e o `números` ("Nenhum herói na guilda.") avisam — então são **duas funções que falam e duas que
+  ficam mudas na mesma situação**. A decisão foi minha: deixar para o Dia 19 e escrever o conserto
+  sozinho. Onde arrumar eu já sei dizer, pelo que aprendi no Ato II: a frase é da portaria
+  (`cli.py`), não do relatório, porque **a regra devolve dados, não frases**.
