@@ -1,0 +1,103 @@
+=== guilda com heróis ===
+
+$ python main.py listar
+Aldric, Mago, nível: 42
+Bryn, Ladino, nível: 17
+Cedric, Mago, nível: 60
+Dara, Clérigo, nível: 8
+[código de saída: 0]
+
+$ python main.py buscar --nome Aldric
+Aldric
+[código de saída: 0]
+
+$ python main.py buscar --nome Ninguem
+Herói não encontrado.
+[código de saída: 0]
+
+$ python main.py filtrar --classe Mago
+Aldric, Mago, nível: 42
+Cedric, Mago, nível: 60
+[código de saída: 0]
+
+$ python main.py filtrar --classe Bárbaro
+Nenhum herói na guilda com a classe de Bárbaro.
+[código de saída: 0]
+
+$ python main.py numeros
+4 heróis na guilda
+31.75, é a média do nível da guilda
+Cedric, é o mais forte
+[código de saída: 0]
+
+$ python main.py cadastrar --nome Elga --classe Clérigo --nivel 5
+Elga entrou para a guilda!
+[código de saída: 0]
+
+$ python main.py listar
+Aldric, Mago, nível: 42
+Bryn, Ladino, nível: 17
+Cedric, Mago, nível: 60
+Dara, Clérigo, nível: 8
+Elga, Clérigo, nível: 5
+[código de saída: 0]
+
+$ python main.py numeros
+5 heróis na guilda
+26.4, é a média do nível da guilda
+Cedric, é o mais forte
+[código de saída: 0]
+
+$ python main.py buscar
+[erro]
+usage: main.py buscar [-h] --nome NOME
+main.py buscar: error: the following arguments are required: --nome
+[código de saída: 2]
+
+$ python main.py cadastrar --nome X --classe Mago --nivel abc
+[erro]
+usage: main.py cadastrar [-h] --nome NOME --classe CLASSE --nivel NIVEL
+main.py cadastrar: error: argument --nivel: invalid int value: 'abc'
+[código de saída: 2]
+
+$ python main.py --help
+usage: main.py [-h] {listar,buscar,filtrar,numeros,cadastrar} ...
+
+A guilda dos heróis.
+
+positional arguments:
+  {listar,buscar,filtrar,numeros,cadastrar}
+    listar              lista os heróis da guilda
+    buscar              busca um herói pelo nome
+    filtrar             filtra os heróis por classe
+    numeros             mostra os números da guilda
+    cadastrar           cadastra um herói novo
+
+options:
+  -h, --help            show this help message and exit
+[código de saída: 0]
+
+$ python main.py
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? agora você conhece a guilda
+[código de saída: 0]
+
+=== guilda vazia ===
+
+$ python main.py listar
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ python main.py filtrar --classe Mago
+Nenhum herói na guilda com a classe de Mago.
+[código de saída: 0]
+
+$ python main.py numeros
+0 heróis na guilda
+0, é a média do nível da guilda
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ python main.py buscar --nome Aldric
+Herói não encontrado.
+[código de saída: 0]
+
