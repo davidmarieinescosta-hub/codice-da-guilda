@@ -131,5 +131,27 @@
 - O que mudei/decidi: escrevi as duas funções eu mesmo, **digitando, não copiando**. Decidi contar `aprovados` e não `herois` no `filtrar` — foi a decisão fina do dia e eu acertei sozinho. Mantive a minha frase e aceitei tirar o espaço sobrando. Antes do commit, expliquei em voz alta as três coisas que ela perguntou: por que `aprovados`, o que o `return` faz e por que a frase é da portaria.
 - Adendo (os merges): eu autorizei os merges do **#36** e do **#37** em 19/10; a IA mergeou os dois com merge commit, apagou as branches e me mostrou a conferência no GitHub. Nesta sessão ela precisou chamar o `gh` pelo caminho completo de novo — o `PATH` do terminal dela continua sem a pasta do GitHub CLI.
 
+## Dia 20
+
+- Pergunta: como começar o Ato III. Eu escolhi entre a baseline (congelar o que o programa responde hoje)
+  e a teoria (estudar objetos antes de tocar no código), e escolhi a baseline.
+- Resposta: a IA escreveu o `baseline.py` — um script que roda todos os comandos do programa com dados
+  de teste fixos e grava saída, mensagem de erro e **código de saída** de cada um num `baseline.txt`
+  versionado. Ela propôs o método (dados dentro do script para a medida ser reprodutível; guardar o
+  código de saída, porque o `argparse` devolve 2 e isso faz parte do contrato; devolver o meu
+  `herois.json` ao que era num `finally`), rodou duas vezes para provar que o resultado é idêntico, e
+  acrescentou um segundo cenário — guilda vazia — depois de ver que o primeiro só media a guilda cheia.
+  Na Regra 4 ela fez duas perguntas antes do commit e, em vez de aceitar a minha primeira resposta,
+  mostrou duas provas rodadas: um `raise` dentro de um `try/finally` (o `finally` imprime antes do
+  traceback) e os três comandos com os códigos de saída lado a lado (`listar` 0, `--nivel abc` 2,
+  `buscar` sem `--nome` 2).
+- O que mudei/decidi: escolhi a baseline em vez da teoria porque o critério do ato é "mesmos comandos,
+  mesmas respostas" — sem uma medida, isso vira memória, e memória não prova nada. Aprovei o método
+  proposto pela IA e autorizei o merge do PR #39 depois de conseguir explicar as duas perguntas. O que
+  eu **não** sabia e precisei aprender no caminho: o `finally` roda mesmo quando há erro, e o
+  `cadastrar --nivel abc` não cadastra nada — o `argparse` recusa antes de o programa rodar.
+- Achado que ficou registrado sem conserto: com a guilda vazia, o `numeros` imprime uma média 0 antes de
+  dizer que não há heróis. É o comportamento de hoje; mudar isso agora quebraria a própria baseline.
+
 
 

@@ -194,3 +194,27 @@
 - Adendo (os PRs): o **#36** (correção do crédito no rastro) e o **#37** (o conserto do `cli.py`)
   foram mergeados em 19/10, com as duas branches apagadas — a `main` voltou a ser a única.
 
+
+## Dia 20 (19/10/26)
+
+- O que fiz: comecei o Ato III pela **baseline** — congelar o que o programa responde hoje para poder
+  provar no fim do ato que "mesmos comandos, mesmas respostas" continua valendo. A IA escreveu o
+  `baseline.py` a meu pedido; o método foi proposto por ela e eu aprovei (dados fixos dentro do
+  script, guardar também o código de saída de cada comando, devolver o meu `herois.json` ao que era
+  num `finally`). Ela rodou duas vezes seguidas e o `baseline.txt` saiu **idêntico** nas duas, com o
+  `herois.json` de volta em `[]`. Ficaram 17 comandos congelados, em dois cenários: guilda com
+  heróis e guilda vazia. Commit `552c6e7`, PR **#39** mergeado por mim em 19/10, branch apagada.
+- Onde travei: no `finally` — eu disse "não faço ideia" quando ela perguntou o que aconteceria se o
+  bloco sumisse — e no código de saída: eu achei que o **2** do `--nivel abc` tinha a ver com os
+  dados sendo comparados, e não tem. Também embolei a explicação dizendo que o 2 servia "para não
+  confundir com a convenção", quando o 2 **é** a convenção.
+- O que entendi hoje: o `finally` roda **mesmo quando há erro** — a prova foi um `raise` no meio do
+  `try` e a mensagem do `finally` saindo antes do traceback; é a rede embaixo do trapézio, e é por
+  isso que o meu `herois.json` não fica com os heróis de teste dentro. Que todo programa devolve um
+  **código de saída** ao sistema (0 = deu certo, diferente de zero = deu errado; 1 é o erro genérico
+  do Python, 2 é a convenção do `argparse` para comando malformado). E que nesse caso o `cadastrar`
+  **nunca rodou**: o `argparse` recusou antes, e o herói não foi gravado.
+- Achado do dia, registrado e não corrigido: com a guilda vazia, o `numeros` imprime "0 heróis na
+  guilda", "0, é a média do nível da guilda" e "Nenhum herói na guilda." — a média 0 é esquisita, mas
+  é o comportamento de hoje e a Forja não pode mudar respostas. Fica para um PR próprio, se for
+  para consertar.
