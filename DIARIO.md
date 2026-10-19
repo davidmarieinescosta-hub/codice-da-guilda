@@ -172,3 +172,25 @@
   ficam mudas na mesma situação**. A decisão foi minha: deixar para o Dia 19 e escrever o conserto
   sozinho. Onde arrumar eu já sei dizer, pelo que aprendi no Ato II: a frase é da portaria
   (`cli.py`), não do relatório, porque **a regra devolve dados, não frases**.
+
+## Dia 19 (17/10/26)
+- O que fiz: comecei corrigindo o rastro do dia anterior — o parágrafo do achado do `listar` estava
+  na minha voz, e quem tinha achado foi a IA; ela me avisou e eu aprovei a correção. Depois escrevi
+  **eu mesmo** o conserto: uma cláusula de guarda no topo do `exibir_lista` e do `exibir_filtro`, com
+  a frase e o `return`. Seis linhas, nenhuma removida, `relatorios.py` intocado. Rodei os cinco
+  casos e todos passaram.
+- Onde travei: no `return`. Eu expliquei que ele "retém uma informação que vai poder ser usada
+  depois", e não é isso: sozinho, o `return` **encerra a função na hora**. A IA mostrou uma prova (um
+  `return` no meio de uma função com dois `print` — só o primeiro saía na tela) e eu reformulei
+  certo. Também errei a palavra na outra resposta: disse que "a portaria resolve", e quem resolve é a
+  regra — a portaria **fala**. E, antes disso, eu tinha dito que era "uma área do Python que eu ainda
+  não sabia", quando o utensílio (`if len(herois) == 0`) estava no meu próprio `relatorios.py` desde
+  o Dia 6.
+- O que entendi hoje: a **cláusula de guarda** (*early return*) — tratar o caso esquisito no topo e
+  sair, deixando o caminho principal reto, em vez de enfiar o resto dentro de um `else`. Que o
+  `return` tem dois empregos: **devolver um valor** (como o `return linhas` do `relatorios.py`) e
+  **encerrar a função**. E que no `filtrar` o `len()` tem que contar `aprovados`, não `herois` —
+  contar o baú inteiro diria "nenhum herói na guilda" para quem tem dez.
+- Adendo (os PRs): o **#36** (correção do crédito no rastro) e o **#37** (o conserto do `cli.py`)
+  foram mergeados em 19/10, com as duas branches apagadas — a `main` voltou a ser a única.
+
