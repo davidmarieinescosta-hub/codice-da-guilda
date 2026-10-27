@@ -218,3 +218,20 @@
   guilda", "0, é a média do nível da guilda" e "Nenhum herói na guilda." — a média 0 é esquisita, mas
   é o comportamento de hoje e a Forja não pode mudar respostas. Fica para um PR próprio, se for
   para consertar.
+
+## Dia 21 (27/10/26)
+- O que fiz: comecei a Forja pela pergunta do desenho — "o que o `Heroi` precisa saber fazer
+  sozinho?". Antes de responder, procurei **onde o programa abre a gaveta de um herói**, com
+  `Select-String -Path *.py -Pattern '\["'`. A primeira busca veio cheia de ruído (as listas de
+  comandos do `baseline.py`) e **incompleta** (só achava aspas duplas, e o `relatorios.py` usa
+  simples). Corrigi o padrão para `heroi\[` e olhando só as duas salas de dados, e achei 9 acessos
+  em 7 linhas, com 3 chaves: `nome`, `classe`, `nivel`.
+- Onde travei: no cansaço. Cheguei ao fim do dia sem cabeça para responder de quem é cada gaveta, e
+  pedi que a IA fizesse o esboço do desenho para eu repassar amanhã. Não escrevi código hoje — de
+  propósito, porque código que eu não consigo explicar não entra em commit.
+- O que entendi hoje: que a busca só encontra o que o padrão descreve (a primeira pergunta era mais
+  estreita que a realidade, e o resultado mentiu por omissão); e que os nove acessos são **todos
+  leitura** — nenhuma das três chaves tem comportamento, o que já diz que o `Heroi` nasce com dados
+  e ganha método só onde existe uma regra.
+- Adendo: o esboço está em `ESBOCO-DA-FORJA.md`, numa branch, **não mergeado**. O repasse é o Dia 22:
+  as cinco perguntas marcadas lá são minhas de responder antes de qualquer classe existir.
