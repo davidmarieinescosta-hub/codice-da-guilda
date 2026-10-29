@@ -235,3 +235,25 @@
   e ganha método só onde existe uma regra.
 - Adendo: o esboço está em `ESBOCO-DA-FORJA.md`, numa branch, **não mergeado**. O repasse é o Dia 22:
   as cinco perguntas marcadas lá são minhas de responder antes de qualquer classe existir.
+
+## Dia 22 (29/10/26)
+- O que fiz: o repasse do esboço, e desta vez com a cabeça no lugar. Respondi as cinco decisões uma por
+  uma, discordei de uma recomendação da IA (quis a `Guilda` fabricando o próprio repositório) e mudei de
+  ideia depois de ver a prova — o `guilda.py` teria que nomear `RepositorioJson`, e o critério do ato
+  proíbe. As cinco viraram o `DECISOES.md`, na forma "decidi X, porque Y, descartei Z". Depois escrevi
+  **eu mesmo**, digitando, a classe `Heroi` no `heroi.py`: atributos públicos, `atende_por` e
+  `e_da_classe`, e a lista de missões com o padrão `None`. Rodei o teste e depois o `baseline.py`:
+  `git diff baseline.txt` vazio.
+- Onde travei: primeiro no **começo** — abri o arquivo e pedi "o que eu escrevo aqui?", porque a página
+  em branco assusta. Depois no `self`: eu expliquei que ele "é como uma gaveta que guarda as informações
+  depois do fim da função", e isso é a descrição do **atributo**, não do `self`. O `self` é o **dono** da
+  gaveta — este objeto aqui. E errei a causa do `NameError`: eu disse que era o `return` que prendia o
+  nome dentro da função, e a causa é outra — o `nome` sozinho é procurado como variável local e global,
+  e não existe em nenhum dos dois lugares; quem sobrevive é o atributo `self.nome`.
+- O que entendi hoje: a diferença entre **classe** (o molde) e **objeto** (o que sai do molde); que
+  `self` quer dizer "eu, este objeto"; que atributo vive no objeto e variável local morre no fim da
+  função; o **argumento padrão mutável** (`missoes=[]` no cabeçalho é criado uma vez só e todos os
+  heróis dividiriam a mesma lista); e que `is None` pergunta "ninguém passou nada?", enquanto `not
+  missoes` também seria verdadeiro para uma lista vazia.
+- Adendo: a `Missao` ficou para o Dia 23, sem arquivo criado. O commit do dia é o `2421dac`, na branch
+  `esboco-da-forja` (o PR #41 ainda está aberto e **não** deve ser mergeado antes de a Forja terminar).
