@@ -218,3 +218,42 @@
   guilda", "0, é a média do nível da guilda" e "Nenhum herói na guilda." — a média 0 é esquisita, mas
   é o comportamento de hoje e a Forja não pode mudar respostas. Fica para um PR próprio, se for
   para consertar.
+
+## Dia 21 (27/10/26)
+- O que fiz: comecei a Forja pela pergunta do desenho — "o que o `Heroi` precisa saber fazer
+  sozinho?". Antes de responder, procurei **onde o programa abre a gaveta de um herói**, com
+  `Select-String -Path *.py -Pattern '\["'`. A primeira busca veio cheia de ruído (as listas de
+  comandos do `baseline.py`) e **incompleta** (só achava aspas duplas, e o `relatorios.py` usa
+  simples). Corrigi o padrão para `heroi\[` e olhando só as duas salas de dados, e achei 9 acessos
+  em 7 linhas, com 3 chaves: `nome`, `classe`, `nivel`.
+- Onde travei: no cansaço. Cheguei ao fim do dia sem cabeça para responder de quem é cada gaveta, e
+  pedi que a IA fizesse o esboço do desenho para eu repassar amanhã. Não escrevi código hoje — de
+  propósito, porque código que eu não consigo explicar não entra em commit.
+- O que entendi hoje: que a busca só encontra o que o padrão descreve (a primeira pergunta era mais
+  estreita que a realidade, e o resultado mentiu por omissão); e que os nove acessos são **todos
+  leitura** — nenhuma das três chaves tem comportamento, o que já diz que o `Heroi` nasce com dados
+  e ganha método só onde existe uma regra.
+- Adendo: o esboço está em `ESBOCO-DA-FORJA.md`, numa branch, **não mergeado**. O repasse é o Dia 22:
+  as cinco perguntas marcadas lá são minhas de responder antes de qualquer classe existir.
+
+## Dia 22 (29/10/26)
+- O que fiz: o repasse do esboço, e desta vez com a cabeça no lugar. Respondi as cinco decisões uma por
+  uma, discordei de uma recomendação da IA (quis a `Guilda` fabricando o próprio repositório) e mudei de
+  ideia depois de ver a prova — o `guilda.py` teria que nomear `RepositorioJson`, e o critério do ato
+  proíbe. As cinco viraram o `DECISOES.md`, na forma "decidi X, porque Y, descartei Z". Depois escrevi
+  **eu mesmo**, digitando, a classe `Heroi` no `heroi.py`: atributos públicos, `atende_por` e
+  `e_da_classe`, e a lista de missões com o padrão `None`. Rodei o teste e depois o `baseline.py`:
+  `git diff baseline.txt` vazio.
+- Onde travei: primeiro no **começo** — abri o arquivo e pedi "o que eu escrevo aqui?", porque a página
+  em branco assusta. Depois no `self`: eu expliquei que ele "é como uma gaveta que guarda as informações
+  depois do fim da função", e isso é a descrição do **atributo**, não do `self`. O `self` é o **dono** da
+  gaveta — este objeto aqui. E errei a causa do `NameError`: eu disse que era o `return` que prendia o
+  nome dentro da função, e a causa é outra — o `nome` sozinho é procurado como variável local e global,
+  e não existe em nenhum dos dois lugares; quem sobrevive é o atributo `self.nome`.
+- O que entendi hoje: a diferença entre **classe** (o molde) e **objeto** (o que sai do molde); que
+  `self` quer dizer "eu, este objeto"; que atributo vive no objeto e variável local morre no fim da
+  função; o **argumento padrão mutável** (`missoes=[]` no cabeçalho é criado uma vez só e todos os
+  heróis dividiriam a mesma lista); e que `is None` pergunta "ninguém passou nada?", enquanto `not
+  missoes` também seria verdadeiro para uma lista vazia.
+- Adendo: a `Missao` ficou para o Dia 23, sem arquivo criado. O commit do dia é o `2421dac`, na branch
+  `esboco-da-forja` (o PR #41 ainda está aberto e **não** deve ser mergeado antes de a Forja terminar).

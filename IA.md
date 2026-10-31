@@ -153,5 +153,42 @@
 - Achado que ficou registrado sem conserto: com a guilda vazia, o `numeros` imprime uma média 0 antes de
   dizer que não há heróis. É o comportamento de hoje; mudar isso agora quebraria a própria baseline.
 
+## Dia 21
+
+- Pergunta: onde eu rodo a busca que a IA pediu; depois, sem cabeça para continuar, pedi que ela fizesse
+  o trabalho do dia e deixasse tudo para o repasse de amanhã.
+- Resposta: ela mostrou como abrir o terminal integrado do VS Code e lembrou que ali o shell é o
+  PowerShell, não o bash — o `grep` que ela tinha passado não existe ali, e o equivalente é
+  `Select-String`. Depois de eu mandar a saída, ela apontou duas coisas que eu não tinha visto: metade
+  das linhas era ruído (as listas de comando do `baseline.py`, não gavetas de herói) e a busca estava
+  **incompleta**, porque o padrão só pegava aspas duplas e o `relatorios.py` usa simples. Com o padrão
+  corrigido, 9 acessos em 7 linhas. Quando eu disse que estava cansado, ela recusou escrever o código
+  das classes — não por falta de tempo dela, mas porque a Regra 4 proíbe commitar o que eu não consigo
+  explicar — e escreveu só o esboço do desenho, com as alternativas descartadas e cinco perguntas
+  abertas para eu responder amanhã.
+- O que mudei/decidi: decidi **parar o dia** por cansaço em vez de seguir empurrando, e pedir o esboço
+  em vez do código. O esboço fica numa branch sem merge: ele não vale nada até eu responder as cinco
+  perguntas e conseguir desenhar as quatro salas sozinho.
+
+## Dia 22
+
+- Pergunta: as cinco decisões do esboço, uma por uma; depois "o que eu escrevo no arquivo?" e "me mostra
+  e me explica o que vai nas partes em `#`"; e, no fim, o que acontece se eu esquecer o `self.`.
+- Resposta: a IA não deu a resposta de nenhuma das cinco — perguntou o porquê, deu a alternativa
+  descartada e, quando eu discordei da recomendação dela (fabricar o repositório dentro da `Guilda`),
+  rodou uma prova com duas versões da classe mostrando que a `Guilda` que fabrica não aceita um
+  repositório de mentira e precisa **nomear** `RepositorioJson`. Só então eu mudei de ideia. Na parte do
+  código, ela deu primeiro o esqueleto com `# aqui:` e três conceitos explicados (`class`, `self`,
+  atributo); quando eu disse que precisava estudar mais e pedi o código, ela mostrou a classe inteira
+  explicada linha por linha — inclusive por que `is None` e não `not missoes`, e por que `return a == b`
+  não precisa de `if/else`. Antes de eu commitar, rodou duas provas: uma classe sem o `self.` (o
+  `NameError: name 'nome' is not defined`) e duas instâncias para provar que as listas de missões não
+  são compartilhadas.
+- O que mudei/decidi: as cinco decisões foram minhas — atributos para ler e método para comparar;
+  `Missao` com `nome` e `dificuldade`, gravada sempre; herança de uma `ABC`; `Guilda` recebendo o
+  repositório de fora; contas continuando no `relatorios.py`. Digitei o `heroi.py` eu mesmo, a partir do
+  código que a IA explicou; a IA escreveu o `DECISOES.md` a partir das minhas decisões. Decidi também
+  deixar a `Missao` para o dia seguinte, mesmo estando no meio do arquivo.
+
 
 
