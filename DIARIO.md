@@ -257,3 +257,32 @@
   missoes` também seria verdadeiro para uma lista vazia.
 - Adendo: a `Missao` ficou para o Dia 23, sem arquivo criado. O commit do dia é o `2421dac`, na branch
   `esboco-da-forja` (o PR #41 ainda está aberto e **não** deve ser mergeado antes de a Forja terminar).
+
+## Dia 23 (31/10/26)
+- O que fiz: as três peças do desenho que faltavam. Primeiro o `missao.py` (`nome` e `dificuldade`), que
+  eu digitei; depois o `repositorio.py`, com o contrato `Repositorio` (uma **ABC** com dois
+  `@abstractmethod`) e o `RepositorioJson`, incluindo as duas conversões objeto ↔ dicionário; por fim a
+  `Guilda`, que recebe o repositório **de fora** e grava a cada mudança (a Decisão 4). Escrevi sozinho o
+  `buscar` e o `listar`; o `filtrar` ficou por último e, quando me perdi na linha, a IA fechou. Três
+  commits — `558a7a4`, `e085c30`, `777c387` — na branch `esboco-da-forja`. Rodei o `baseline.py` depois
+  de cada um: `git diff baseline.txt` vazio nas três vezes.
+- Onde travei: (1) no `missao.py` escrevi o corpo fora da indentação e tomei um `IndentationError` — foi
+  a primeira vez que li o traceback **de trás para frente** e funcionou; (2) colei texto no lugar errado
+  do `repositorio.py`, sem selecionar o que ia substituir, e o arquivo ficou com imports duplicados,
+  `import json` indentado **dentro** da classe e métodos órfãos; a IA reescreveu o arquivo limpo; (3) na
+  conversão de volta errei três coisas de uma vez no `_para_heroi`: usei `heroi.missoes` num lugar onde
+  o que chegava era um dicionário, chamei `missao.nome` num dicionário puro e devolvi dicionário onde
+  precisava sair `Heroi`; (4) no fim do dia perdi a linha do que estava fazendo e parei antes do
+  `filtrar`.
+- O que entendi hoje: o que é uma **ABC** e por que o contrato não pode ser instanciado; que
+  `@abstractmethod` é um **decorator** (um embrulho na função, escrito com `@`); que `dicionario.get("missoes", [])`
+  devolve `[]` quando a chave falta, enquanto `["missoes"]` estoura `KeyError` — e que essa escolha é
+  minha, é um **silêncio decidido** (herói antigo, de antes da `Missao` existir) e não um silêncio por
+  descuido; que o JSON só conhece dicionário, lista, texto, número e nada — por isso a ida e a volta
+  passam por um dicionário, e que `h.__dict__` **não** serve para gravar, porque mostra
+  `<missao.Missao object at 0x...>`; que o repositório é a **alfândega**, o único lugar que traduz; e que
+  `=` no cabeçalho é valor padrão, enquanto `:` é anotação (`nome: str`), que é documentação e não
+  obrigação.
+- Adendo: **a Regra 4 do Dia 23 está devendo.** Pedi que a explicação em voz alta ficasse para amanhã e
+  os commits foram feitos na branch `esboco-da-forja`, que fica **sem merge** até eu explicar. Nada
+  entrou na `main`; a regra não foi cumprida, foi **registrada como pendente**.

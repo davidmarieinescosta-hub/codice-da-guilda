@@ -190,5 +190,26 @@
   código que a IA explicou; a IA escreveu o `DECISOES.md` a partir das minhas decisões. Decidi também
   deixar a `Missao` para o dia seguinte, mesmo estando no meio do arquivo.
 
+## Dia 23
+
+- Pergunta: "onde eu coloco esse código", "olhe para ver se coloquei certo", "como eu faço para fazer
+  isso" (a conversão de dicionário para `Heroi`), "me explique o que eu tenho que fazer" (os métodos da
+  `Guilda`) e, no fim, "eu me perdi na situação, fui fazer outra coisa, pode finalizar pra mim?".
+- Resposta: a IA explicou o `IndentationError` de trás para frente em vez de consertar o arquivo; depois
+  do paste que estragou o `repositorio.py`, reescreveu o arquivo limpo e **deixou as duas conversões em
+  branco**; quando eu tentei o `_para_heroi`, mostrou as três inversões que eu tinha feito (dicionário
+  tratado como objeto, objeto tratado como dicionário, `dict` devolvido no lugar de `Heroi`) e só então
+  escreveu a versão certa. Na `Guilda`, deu o `buscar` inteiro explicado e deixou `listar` e `filtrar`
+  para mim; eu fiz os dois primeiros. **A IA escreveu o `filtrar`** quando eu disse que tinha me
+  perdido, e provou que ele bate com o `regras.py` antigo. Também corrigiu a mensagem de um commit meu
+  que ela mesma tinha estragado com sintaxe de PowerShell (`@'…'@`) dentro do bash. Escreveu ainda este
+  rastro e a entrada do `DIARIO.md`.
+- O que mudei/decidi: decidi deixar a explicação da Regra 4 para amanhã e mandar commitar assim mesmo —
+  ciente de que a regra diz "nunca 'depois eu vejo'". A decisão de contornar foi minha, com o limite
+  que a IA propôs e eu aceitei: os commits ficam na branch `esboco-da-forja`, **sem merge**, até eu
+  explicar em voz alta. Aceitei o `.get("missoes", [])` como silêncio **decidido** para herói antigo,
+  depois de ver o `KeyError` da alternativa, e escolhi o `RepositorioJson` como o único lugar que traduz.
+  O nome das classes e as cinco decisões são do Dia 22 e continuam valendo.
+
 
 
