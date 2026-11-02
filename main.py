@@ -1,8 +1,9 @@
 # main.py — o maestro: orquestra o ciclo do dia.
 import argparse
 
-import armazenamento
 import cli
+from guilda import Guilda
+from repositorio import RepositorioJson
 
 
 def montar_parser() -> argparse.ArgumentParser:
@@ -28,34 +29,32 @@ def montar_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def executar(herois: list, args: argparse.Namespace) -> None:
+def executar(guilda: Guilda, args: argparse.Namespace) -> None:
     """Roda o comando escolhido na linha de comando."""
     if args.comando == "listar":
-        cli.exibir_lista(herois)
+        cli.exibir_lista(guilda)
     elif args.comando == "buscar":
-        cli.exibir_busca(herois, args.nome)
+        cli.exibir_busca(guilda, args.nome)
     elif args.comando == "filtrar":
-        cli.exibir_filtro(herois, args.classe)
+        cli.exibir_filtro(guilda, args.classe)
     elif args.comando == "numeros":
-        cli.exibir_numeros(herois)
+        cli.exibir_numeros(guilda)
     elif args.comando == "cadastrar":
-        cli.cadastrar_heroi(herois, args.nome, args.classe, args.nivel)
+        cli.cadastrar_heroi(guilda, args.nome, args.classe, args.nivel)
 
 
 def main() -> None:
-    """Carrega a guilda, atende o comando (ou abre o menu) e salva no fim."""
+    """Abre a guilda, atende o comando (ou o menu) — ela grava a cada mudança."""
     parser = montar_parser()
     args = parser.parse_args()
 
-    herois, aviso = armazenamento.carregar_herois()
+    guilda = Guilda(RepositorioJson())
 
     if args.comando is None:
-        cli.menu(herois, aviso)
+        cli.menu(guilda)
     else:
-        cli.exibir_aviso(aviso)
-        executar(herois, args)
-
-    armazenamento.salvar_herois(herois)
+        cli.exibir_aviso(guilda.aviso)
+        executar(guilda, args)
 
 
 if __name__ == "__main__":

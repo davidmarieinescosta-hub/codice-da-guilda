@@ -133,6 +133,24 @@ fala**.
 
 ---
 
+## 6. Apagar só o `regras.py` e manter o `armazenamento.py` pelo `codice.py`
+
+**Decidi** apagar o `regras.py` — ninguém mais o importa depois da religação — e **manter**
+o `armazenamento.py`, com um comentário no topo dizendo de quem ele é empregado: o
+`codice.py` do Ato I.
+
+**Porque** a primeira versão desta decisão era apagar os dois, e ela estava errada por
+informação incompleta: o `codice.py` usa `armazenamento.carregar_herois()` e
+`salvar_herois()` nas linhas 71 e 75. Apagar teria deixado um arquivo do repositório que
+não abre — e o `codice.py` é a história do Ato I, a comparação que este ato quer mostrar
+no PR. Reescrever o `codice.py` com as classes novas seria pior: a "história" passaria a
+mostrar o programa de hoje.
+
+**Descartei** apagar os dois (quebraria o `codice.py`) e reescrever o `codice.py`
+(apagaria a comparação antes/depois). O custo aceito é um arquivo a mais.
+
+---
+
 ## O que fica de fora, de propósito
 
 - Corrigir a média 0 na guilda vazia (achado do Dia 20) — mudaria o baseline.
