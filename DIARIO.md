@@ -218,3 +218,97 @@
   guilda", "0, é a média do nível da guilda" e "Nenhum herói na guilda." — a média 0 é esquisita, mas
   é o comportamento de hoje e a Forja não pode mudar respostas. Fica para um PR próprio, se for
   para consertar.
+
+## Dia 21 (27/10/26)
+- O que fiz: comecei a Forja pela pergunta do desenho — "o que o `Heroi` precisa saber fazer
+  sozinho?". Antes de responder, procurei **onde o programa abre a gaveta de um herói**, com
+  `Select-String -Path *.py -Pattern '\["'`. A primeira busca veio cheia de ruído (as listas de
+  comandos do `baseline.py`) e **incompleta** (só achava aspas duplas, e o `relatorios.py` usa
+  simples). Corrigi o padrão para `heroi\[` e olhando só as duas salas de dados, e achei 9 acessos
+  em 7 linhas, com 3 chaves: `nome`, `classe`, `nivel`.
+- Onde travei: no cansaço. Cheguei ao fim do dia sem cabeça para responder de quem é cada gaveta, e
+  pedi que a IA fizesse o esboço do desenho para eu repassar amanhã. Não escrevi código hoje — de
+  propósito, porque código que eu não consigo explicar não entra em commit.
+- O que entendi hoje: que a busca só encontra o que o padrão descreve (a primeira pergunta era mais
+  estreita que a realidade, e o resultado mentiu por omissão); e que os nove acessos são **todos
+  leitura** — nenhuma das três chaves tem comportamento, o que já diz que o `Heroi` nasce com dados
+  e ganha método só onde existe uma regra.
+- Adendo: o esboço está em `ESBOCO-DA-FORJA.md`, numa branch, **não mergeado**. O repasse é o Dia 22:
+  as cinco perguntas marcadas lá são minhas de responder antes de qualquer classe existir.
+
+## Dia 22 (29/10/26)
+- O que fiz: o repasse do esboço, e desta vez com a cabeça no lugar. Respondi as cinco decisões uma por
+  uma, discordei de uma recomendação da IA (quis a `Guilda` fabricando o próprio repositório) e mudei de
+  ideia depois de ver a prova — o `guilda.py` teria que nomear `RepositorioJson`, e o critério do ato
+  proíbe. As cinco viraram o `DECISOES.md`, na forma "decidi X, porque Y, descartei Z". Depois escrevi
+  **eu mesmo**, digitando, a classe `Heroi` no `heroi.py`: atributos públicos, `atende_por` e
+  `e_da_classe`, e a lista de missões com o padrão `None`. Rodei o teste e depois o `baseline.py`:
+  `git diff baseline.txt` vazio.
+- Onde travei: primeiro no **começo** — abri o arquivo e pedi "o que eu escrevo aqui?", porque a página
+  em branco assusta. Depois no `self`: eu expliquei que ele "é como uma gaveta que guarda as informações
+  depois do fim da função", e isso é a descrição do **atributo**, não do `self`. O `self` é o **dono** da
+  gaveta — este objeto aqui. E errei a causa do `NameError`: eu disse que era o `return` que prendia o
+  nome dentro da função, e a causa é outra — o `nome` sozinho é procurado como variável local e global,
+  e não existe em nenhum dos dois lugares; quem sobrevive é o atributo `self.nome`.
+- O que entendi hoje: a diferença entre **classe** (o molde) e **objeto** (o que sai do molde); que
+  `self` quer dizer "eu, este objeto"; que atributo vive no objeto e variável local morre no fim da
+  função; o **argumento padrão mutável** (`missoes=[]` no cabeçalho é criado uma vez só e todos os
+  heróis dividiriam a mesma lista); e que `is None` pergunta "ninguém passou nada?", enquanto `not
+  missoes` também seria verdadeiro para uma lista vazia.
+- Adendo: a `Missao` ficou para o Dia 23, sem arquivo criado. O commit do dia é o `2421dac`, na branch
+  `esboco-da-forja` (o PR #41 ainda está aberto e **não** deve ser mergeado antes de a Forja terminar).
+
+## Dia 23 (31/10/26)
+- O que fiz: as três peças do desenho que faltavam. Primeiro o `missao.py` (`nome` e `dificuldade`), que
+  eu digitei; depois o `repositorio.py`, com o contrato `Repositorio` (uma **ABC** com dois
+  `@abstractmethod`) e o `RepositorioJson`, incluindo as duas conversões objeto ↔ dicionário; por fim a
+  `Guilda`, que recebe o repositório **de fora** e grava a cada mudança (a Decisão 4). Escrevi sozinho o
+  `buscar` e o `listar`; o `filtrar` ficou por último e, quando me perdi na linha, a IA fechou. Três
+  commits — `558a7a4`, `e085c30`, `777c387` — na branch `esboco-da-forja`. Rodei o `baseline.py` depois
+  de cada um: `git diff baseline.txt` vazio nas três vezes.
+- Onde travei: (1) no `missao.py` escrevi o corpo fora da indentação e tomei um `IndentationError` — foi
+  a primeira vez que li o traceback **de trás para frente** e funcionou; (2) colei texto no lugar errado
+  do `repositorio.py`, sem selecionar o que ia substituir, e o arquivo ficou com imports duplicados,
+  `import json` indentado **dentro** da classe e métodos órfãos; a IA reescreveu o arquivo limpo; (3) na
+  conversão de volta errei três coisas de uma vez no `_para_heroi`: usei `heroi.missoes` num lugar onde
+  o que chegava era um dicionário, chamei `missao.nome` num dicionário puro e devolvi dicionário onde
+  precisava sair `Heroi`; (4) no fim do dia perdi a linha do que estava fazendo e parei antes do
+  `filtrar`.
+- O que entendi hoje: o que é uma **ABC** e por que o contrato não pode ser instanciado; que
+  `@abstractmethod` é um **decorator** (um embrulho na função, escrito com `@`); que `dicionario.get("missoes", [])`
+  devolve `[]` quando a chave falta, enquanto `["missoes"]` estoura `KeyError` — e que essa escolha é
+  minha, é um **silêncio decidido** (herói antigo, de antes da `Missao` existir) e não um silêncio por
+  descuido; que o JSON só conhece dicionário, lista, texto, número e nada — por isso a ida e a volta
+  passam por um dicionário, e que `h.__dict__` **não** serve para gravar, porque mostra
+  `<missao.Missao object at 0x...>`; que o repositório é a **alfândega**, o único lugar que traduz; e que
+  `=` no cabeçalho é valor padrão, enquanto `:` é anotação (`nome: str`), que é documentação e não
+  obrigação.
+- Adendo: **a Regra 4 do Dia 23 está devendo.** Pedi que a explicação em voz alta ficasse para amanhã e
+  os commits foram feitos na branch `esboco-da-forja`, que fica **sem merge** até eu explicar. Nada
+  entrou na `main`; a regra não foi cumprida, foi **registrada como pendente**.
+
+## Dia 24 (02/11/26)
+- O que fiz: comecei pagando a **Regra 4 do Dia 23** — expliquei o desempacotamento
+  (`herois, aviso = carregar()`, porque a função devolve uma **tupla** de dois) e por que o
+  `return` dentro do `for` perde heróis (a prova mostrou `['Aldric']` em vez de `['Aldric',
+  'Cedric']`). Depois **religuei o programa nas classes**: mudei o `relatorios.py` (cinco
+  linhas, `heroi['nivel']` virou `heroi.nivel`), mudei os corpos de três funções do `cli.py`
+  e errei os cabeçalhos, e a IA fechou o `cli.py` e o `main.py`. Apaguei o `regras.py` e
+  mantive o `armazenamento.py`, com comentário, porque o `codice.py` do Ato I ainda o usa —
+  foi a **Decisão 6 revisada**, depois de o `grep` mostrar que apagar os dois quebraria a
+  história. Rodei a baseline: **idêntica**, 17 comandos com as mesmas respostas. Subi a
+  branch (`origin` estava parado desde o Dia 22) e atualizei o PR #41 com o antes/depois.
+- Onde travei: primeiro nos **cabeçalhos** do `cli.py` — troquei o corpo das três funções e
+  esqueci que o parâmetro ainda se chamava `herois`, então o `NameError: name 'guilda' is not
+  defined` apareceu no primeiro teste. Depois, na pergunta do **custo** da Decisão 4: eu achei
+  que a resposta precisava de um Ato novo ("o programa não salva no final, precisamos do Ato
+  IV"), quando a resposta estava no comportamento do próprio programa hoje.
+- O que entendi hoje: o que é **desempacotamento** de tupla e por que a função pode devolver
+  dois valores numa chamada só; que o `return` **encerra** a função, e por isso dentro do
+  `for` ele abandona o resto da lista; que o **cabeçalho** de uma função é a lista de nomes que
+  existem lá dentro; e o **custo** de trocar "grava no fim" por "grava a cada mudança" — some
+  a rede de segurança, sobra uma escrita deliberada. Prova: com o `herois.json` corrompido, o
+  `listar` de hoje **não** sobrescreve o arquivo; o de ontem teria escrito `[]` por cima.
+- Adendo: **Regra 4 do Dia 24 também paga**, no fim da sessão, com a frase "não existe mais a
+  rede de segurança em torno do código, deixa ele mais vulnerável de certa forma". O merge do
+  PR #41 continua sendo decisão minha, não da IA.

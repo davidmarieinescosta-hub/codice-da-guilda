@@ -1,3 +1,5 @@
+# armazenamento.py — só o codice.py do Ato I usa este arquivo.
+# O programa de hoje guarda pelo repositorio.py (RepositorioJson).
 import json
 
 

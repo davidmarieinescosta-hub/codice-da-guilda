@@ -153,5 +153,84 @@
 - Achado que ficou registrado sem conserto: com a guilda vazia, o `numeros` imprime uma média 0 antes de
   dizer que não há heróis. É o comportamento de hoje; mudar isso agora quebraria a própria baseline.
 
+## Dia 21
+
+- Pergunta: onde eu rodo a busca que a IA pediu; depois, sem cabeça para continuar, pedi que ela fizesse
+  o trabalho do dia e deixasse tudo para o repasse de amanhã.
+- Resposta: ela mostrou como abrir o terminal integrado do VS Code e lembrou que ali o shell é o
+  PowerShell, não o bash — o `grep` que ela tinha passado não existe ali, e o equivalente é
+  `Select-String`. Depois de eu mandar a saída, ela apontou duas coisas que eu não tinha visto: metade
+  das linhas era ruído (as listas de comando do `baseline.py`, não gavetas de herói) e a busca estava
+  **incompleta**, porque o padrão só pegava aspas duplas e o `relatorios.py` usa simples. Com o padrão
+  corrigido, 9 acessos em 7 linhas. Quando eu disse que estava cansado, ela recusou escrever o código
+  das classes — não por falta de tempo dela, mas porque a Regra 4 proíbe commitar o que eu não consigo
+  explicar — e escreveu só o esboço do desenho, com as alternativas descartadas e cinco perguntas
+  abertas para eu responder amanhã.
+- O que mudei/decidi: decidi **parar o dia** por cansaço em vez de seguir empurrando, e pedir o esboço
+  em vez do código. O esboço fica numa branch sem merge: ele não vale nada até eu responder as cinco
+  perguntas e conseguir desenhar as quatro salas sozinho.
+
+## Dia 22
+
+- Pergunta: as cinco decisões do esboço, uma por uma; depois "o que eu escrevo no arquivo?" e "me mostra
+  e me explica o que vai nas partes em `#`"; e, no fim, o que acontece se eu esquecer o `self.`.
+- Resposta: a IA não deu a resposta de nenhuma das cinco — perguntou o porquê, deu a alternativa
+  descartada e, quando eu discordei da recomendação dela (fabricar o repositório dentro da `Guilda`),
+  rodou uma prova com duas versões da classe mostrando que a `Guilda` que fabrica não aceita um
+  repositório de mentira e precisa **nomear** `RepositorioJson`. Só então eu mudei de ideia. Na parte do
+  código, ela deu primeiro o esqueleto com `# aqui:` e três conceitos explicados (`class`, `self`,
+  atributo); quando eu disse que precisava estudar mais e pedi o código, ela mostrou a classe inteira
+  explicada linha por linha — inclusive por que `is None` e não `not missoes`, e por que `return a == b`
+  não precisa de `if/else`. Antes de eu commitar, rodou duas provas: uma classe sem o `self.` (o
+  `NameError: name 'nome' is not defined`) e duas instâncias para provar que as listas de missões não
+  são compartilhadas.
+- O que mudei/decidi: as cinco decisões foram minhas — atributos para ler e método para comparar;
+  `Missao` com `nome` e `dificuldade`, gravada sempre; herança de uma `ABC`; `Guilda` recebendo o
+  repositório de fora; contas continuando no `relatorios.py`. Digitei o `heroi.py` eu mesmo, a partir do
+  código que a IA explicou; a IA escreveu o `DECISOES.md` a partir das minhas decisões. Decidi também
+  deixar a `Missao` para o dia seguinte, mesmo estando no meio do arquivo.
+
+## Dia 23
+
+- Pergunta: "onde eu coloco esse código", "olhe para ver se coloquei certo", "como eu faço para fazer
+  isso" (a conversão de dicionário para `Heroi`), "me explique o que eu tenho que fazer" (os métodos da
+  `Guilda`) e, no fim, "eu me perdi na situação, fui fazer outra coisa, pode finalizar pra mim?".
+- Resposta: a IA explicou o `IndentationError` de trás para frente em vez de consertar o arquivo; depois
+  do paste que estragou o `repositorio.py`, reescreveu o arquivo limpo e **deixou as duas conversões em
+  branco**; quando eu tentei o `_para_heroi`, mostrou as três inversões que eu tinha feito (dicionário
+  tratado como objeto, objeto tratado como dicionário, `dict` devolvido no lugar de `Heroi`) e só então
+  escreveu a versão certa. Na `Guilda`, deu o `buscar` inteiro explicado e deixou `listar` e `filtrar`
+  para mim; eu fiz os dois primeiros. **A IA escreveu o `filtrar`** quando eu disse que tinha me
+  perdido, e provou que ele bate com o `regras.py` antigo. Também corrigiu a mensagem de um commit meu
+  que ela mesma tinha estragado com sintaxe de PowerShell (`@'…'@`) dentro do bash. Escreveu ainda este
+  rastro e a entrada do `DIARIO.md`.
+- O que mudei/decidi: decidi deixar a explicação da Regra 4 para amanhã e mandar commitar assim mesmo —
+  ciente de que a regra diz "nunca 'depois eu vejo'". A decisão de contornar foi minha, com o limite
+  que a IA propôs e eu aceitei: os commits ficam na branch `esboco-da-forja`, **sem merge**, até eu
+  explicar em voz alta. Aceitei o `.get("missoes", [])` como silêncio **decidido** para herói antigo,
+  depois de ver o `KeyError` da alternativa, e escolhi o `RepositorioJson` como o único lugar que traduz.
+  O nome das classes e as cinco decisões são do Dia 22 e continuam valendo.
+
+## Dia 24
+
+- Pergunta: "vamos começar"; depois as duas perguntas da Regra 4 do Dia 23 (por que duas
+  variáveis recebem de uma chamada só e por que o `return` do `filtrar` fica fora do `for`);
+  "me explique o que eu tenho que fazer" no `relatorios.py` e no `cli.py`; a decisão sobre o
+  que fazer com o `regras.py` e o `armazenamento.py`; e, no fim, "vamos cumprir a regra 4".
+- Resposta: a IA provou por execução em vez de discutir — mostrou que `carregar()` devolve uma
+  **tupla**, rodou a versão com `return` dentro do `for` ao lado da certa (`['Aldric']` contra
+  `['Aldric', 'Cedric']`), e mostrou que o aviso **não** é sobre herói antigo sem missões, e
+  sim sobre o pergaminho ausente ou rasgado. No `cli.py`, ela apontou que eu tinha mudado os
+  corpos mas não os cabeçalhos, provando com um `NameError`. Antes de apagar o
+  `armazenamento.py`, rodou um `grep` que achou o `codice.py` usando o arquivo — e refez a
+  decisão comigo. **A IA escreveu** o `exibir_numeros`, o `cadastrar_heroi`, o `menu`, o
+  `main.py`, o `DECISOES.md` (decisões 6 e o custo da 4), o texto do PR e este rastro.
+- O que mudei/decidi: escolhi **C** na Decisão 6 — apagar só o `regras.py` e manter o
+  `armazenamento.py`, "porque ele vai seguir as regras do ato e não quebrar o programa".
+  Decidi também que a IA podia commitar antes de eu responder a Regra 4 (segunda vez seguida),
+  com a pendência registrada; e paguei a regra no fim da sessão, explicando que o que se perde
+  é a rede de segurança. O push e a atualização do PR #41 foram autorizados por mim. **O merge
+  não** — esse fica para quando eu revisar o PR.
+
 
 

@@ -1,5 +1,6 @@
 # cli.py — a portaria: fala com o usuário.
-import regras
+from guilda import Guilda
+from heroi import Heroi
 import relatorios
 
 
@@ -9,8 +10,9 @@ def exibir_aviso(aviso: str | None) -> None:
         print(aviso)
 
 
-def exibir_lista(herois: list) -> None:
+def exibir_lista(guilda: Guilda) -> None:
     """Imprime a lista da guilda, um herói por linha."""
+    herois = guilda.listar()
     if len(herois) == 0:
         print("Nenhum herói na guilda.")
         return
@@ -18,18 +20,18 @@ def exibir_lista(herois: list) -> None:
         print(linha)
 
 
-def exibir_busca(herois: list, nome: str) -> None:
+def exibir_busca(guilda: Guilda, nome: str) -> None:
     """Imprime o herói achado, ou avisa que ele não existe."""
-    resultado = regras.buscar_heroi(herois, nome)
+    resultado = guilda.buscar(nome)
     if resultado is None:
         print("Herói não encontrado.")
     else:
-        print(resultado['nome'])
+        print(resultado.nome)
 
 
-def exibir_filtro(herois: list, classe: str) -> None:
+def exibir_filtro(guilda: Guilda, classe: str) -> None:
     """Imprime os heróis da classe pedida."""
-    aprovados = regras.filtrar_herois_por_classe(herois, classe)
+    aprovados = guilda.filtrar(classe)
     if len(aprovados) == 0:
         print(f"Nenhum herói na guilda com a classe de {classe}.")
         return
@@ -37,9 +39,9 @@ def exibir_filtro(herois: list, classe: str) -> None:
         print(linha)
 
 
-def exibir_numeros(herois: list) -> None:
+def exibir_numeros(guilda: Guilda) -> None:
     """Imprime o total, a média e o mais forte da guilda."""
-    numeros = relatorios.mostrar_numeros(herois)
+    numeros = relatorios.mostrar_numeros(guilda.listar())
     print(f"{numeros['quantos']} heróis na guilda")
     print(f"{numeros['media']}, é a média do nível da guilda")
     if numeros['mais_forte'] is None:
@@ -48,32 +50,32 @@ def exibir_numeros(herois: list) -> None:
         print(f"{numeros['mais_forte']}, é o mais forte")
 
 
-def cadastrar_heroi(herois: list, nome: str, classe: str, nivel: int) -> None:
+def cadastrar_heroi(guilda: Guilda, nome: str, classe: str, nivel: int) -> None:
     """Cria o herói, guarda no baú e avisa que ele entrou."""
-    heroi = regras.criar_heroi(nome, classe, nivel)
-    herois.append(heroi)
+    heroi = Heroi(nome, classe, nivel)
+    guilda.cadastrar(heroi)
     print(f"{nome} entrou para a guilda!")
 
 
-def menu(herois: list, aviso: str | None) -> None:
+def menu(guilda: Guilda) -> None:
     """Roda o menu da guilda até o usuário escolher sair."""
-    exibir_aviso(aviso)
+    exibir_aviso(guilda.aviso)
     opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
     while opções != "sair":
         if opções == "cadastrar":
             nome = input("Nome do herói: ")
             classe = input("Classe: ")
             nivel = int(input("Nível: "))
-            cadastrar_heroi(herois, nome, classe, nivel)
+            cadastrar_heroi(guilda, nome, classe, nivel)
         elif opções == "listar":
-            exibir_lista(herois)
+            exibir_lista(guilda)
         elif opções == "buscar":
             nome = input("Qual nome quer buscar? ")
-            exibir_busca(herois, nome)
+            exibir_busca(guilda, nome)
         elif opções == "filtrar":
             classe = input("Qual classe quer filtrar? ")
-            exibir_filtro(herois, classe)
+            exibir_filtro(guilda, classe)
         elif opções == "números":
-            exibir_numeros(herois)
+            exibir_numeros(guilda)
         opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
     print("agora você conhece a guilda")

@@ -9,10 +9,10 @@ def mostrar_numeros(herois: list) -> dict:
     mais_forte = 0
     nome_mais_forte = ""
     for heroi in herois:
-        total = total + heroi['nivel']
-        if heroi['nivel'] > mais_forte:
-            mais_forte = heroi['nivel']
-            nome_mais_forte = heroi['nome']
+        total = total + heroi.nivel
+        if heroi.nivel > mais_forte:
+            mais_forte = heroi.nivel
+            nome_mais_forte = heroi.nome
     return {"quantos": len(herois), "media": total / len(herois), "mais_forte": nome_mais_forte}
 
 
@@ -20,5 +20,5 @@ def formatar_lista(herois: list) -> list:
     """Devolve a listagem da guilda pronta para exibição."""
     linhas = []
     for heroi in herois:
-        linhas.append(f"{heroi['nome']}, {heroi['classe']}, nível: {heroi['nivel']}")
+        linhas.append(f"{heroi.nome}, {heroi.classe}, nível: {heroi.nivel}")
     return linhas
