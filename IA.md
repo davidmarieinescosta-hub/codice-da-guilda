@@ -248,3 +248,8 @@
 
 
 
+- O que aconteceu, e ficou no rastro: quando a IA foi mergear esse PR de documentação
+  (#42) sozinha, o próprio sistema a **bloqueou** — "o projeto determina que o merge é
+  decisão do autor". Ela me contou o bloqueio em vez de esconder, e o PR ficou esperando
+  o meu merge, como o #41. A regra que sobra para as próximas sessões: **a IA nunca
+  mergeia**, nem PR de documentação que ela mesma abriu.
