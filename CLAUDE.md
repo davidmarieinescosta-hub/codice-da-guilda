@@ -78,9 +78,16 @@ buscar pelo nome, filtrar por classe e mostrar números (quantos são, nível m�
 quem é o mais forte).
 
 O programa do Ato I era um arquivo só, o [codice.py](codice.py) — guardado como
-história. O Ato II o repartiu em cinco salas, cada uma com um emprego: `main.py` (o
-maestro), `cli.py` (a portaria), `regras.py` (as regras), `relatorios.py` (as
-contas), `armazenamento.py` (o baú). O autor continua explicando as cinco.
+história. O Ato II o repartiu em salas, cada uma com um emprego: `main.py` (o maestro),
+`cli.py` (a portaria), `relatorios.py` (as contas), `armazenamento.py` (o baú, hoje só
+usado pelo `codice.py`). O Ato III — a Forja — trocou o dicionário por objetos: `heroi.py`
+e `missao.py` (os dados com as suas regras), `repositorio.py` (o contrato `Repositorio`,
+uma ABC, e o `RepositorioJson`, a alfândega que traduz objeto ↔ dicionário) e `guilda.py`
+(o baú que recebe o repositório de fora e grava a cada mudança).
+
+A regra que vale a partir do Ato III: **a `Guilda` não pode saber que JSON existe** — dentro
+do `guilda.py` não entra `open(`, `json.` nem o nome `RepositorioJson`. É critério de aceite,
+verificável com um `grep`.
 
 Os dados vivem em `herois.json`, gravado a cada execução — por isso o arquivo está
 no .gitignore (é dado gerado, não código). No Ato I viviam só em memória.
@@ -123,27 +130,32 @@ nenhuma.
 - No mínimo 20 commits, em pelo menos 8 dias diferentes, mensagens no imperativo.
 - Um .gitignore que o autor entende linha por linha.
 
-## Estado do projeto (15/10/2026)
+## Estado do projeto (02/11/2026)
 
 - Remoto `origin` configurado (github.com/davidmarieinescosta-hub/codice-da-guilda).
-- **Ato II fechado.** O mestre revisou e respondeu que estava tudo certo e que o autor
-  podia seguir. A revisão aprovou **sem pedir nenhuma correção** — e o critério do Ato
-  fala em "um PR com correções pedidas pelo mestre". A decisão registrada (do autor, em
-  15/10) é não fabricar uma correção para fechar o critério: fica escrito como o que foi,
-  uma revisão externa que aprovou. O programa roda por comando
-  (`python main.py listar`) e pelo menu
-  (`python main.py --help` mostra tudo); os dados ficam no `herois.json`.
-- As cinco salas no lugar: main.py, cli.py, regras.py, relatorios.py,
-  armazenamento.py — mais o codice.py do Ato I, guardado como história.
+- **Atos I, II e III fechados.** O Ato II foi aprovado pelo mestre sem correção pedida; essa
+  decisão continua registrada como foi. O Ato III (a Forja) foi entregue no PR #41, revisado
+  e autorizado pelo mestre, e mergeado em 02/11 às 22:10 — commit de merge `791d47e`, com a
+  branch `esboco-da-forja` apagada local e no remoto.
+- **Ato IV liberado** pelo mestre em 02/11. Ainda não há plano escrito para ele: a primeira
+  tarefa do ato é decidir o que ele pede (ler a régua do programa) antes de escrever código.
+- O programa de hoje: `main.py` monta `Guilda(RepositorioJson())`; a portaria pede ao baú em
+  vez de carregar a lista; as contas ficam no `relatorios.py`. Roda por comando
+  (`python main.py listar`) e pelo menu (`python main.py --help` mostra tudo).
+- `regras.py` foi apagado no Ato III. O `armazenamento.py` **ficou**: o `codice.py` do Ato I
+  ainda o usa (linhas 71 e 75). Não apague sem antes trocar o `codice.py`.
+- **`baseline.py` e `baseline.txt` são a medida do programa.** Qualquer mudança de código
+  deve terminar com `python baseline.py` e `git diff baseline.txt` vazio — a menos que a
+  mudança queira, de propósito, alterar uma resposta; aí o `baseline.txt` é regravado e a
+  diferença é explicada no PR.
 - Toda mudança entra por branch + commit + PR; zero commit direto na `main`.
-- README.md e o "Estado do projeto" deste arquivo atualizados no Ato II.
-- DIARIO.md e IA.md preenchidos até o Dia 18.
-- Os PRs #32 e #33 foram mergeados em 15/10 (merge commit, como os 31 anteriores) e as
-  duas branches apagadas — a `main` é a única branch, local e no GitHub.
-- O mestre liberou o Ato III. Continua pendente pedir a ele: a Issue da Sabotagem I e a
-  data do Rito de Passagem II.
-- Conceitos do Ato II que ainda não têm casa no código: `finally`, `raise`,
-  `requirements.txt`, CSV e módulos numa pasta.
+- DIARIO.md e IA.md preenchidos até o Dia 24. 119 commits em 23 dias diferentes.
+- Continua pendente com o mestre: a **Issue da Sabotagem I** e a **data do Rito de
+  Passagem II** (o Rito do Ato II ainda não foi feito).
+- A prova dos 15 minutos sem IA (critério **Modificar**) nunca foi feita — é o furo conhecido.
+- `teste_subcomandos.py` está solto na raiz, sem destino decidido.
+- Conceitos ainda sem casa no código: `raise`, `requirements.txt`, CSV e módulos numa pasta.
+  (`finally` ganhou casa na `baseline.py`.)
 - .claude/settings.json contém credencial de API em texto puro. Está no .gitignore;
   nunca use `git add -f` nele nem copie o arquivo para outro lugar. Se algum dia for
   commitado, a chave precisa ser revogada.

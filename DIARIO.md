@@ -312,3 +312,10 @@
 - Adendo: **Regra 4 do Dia 24 também paga**, no fim da sessão, com a frase "não existe mais a
   rede de segurança em torno do código, deixa ele mais vulnerável de certa forma". O merge do
   PR #41 continua sendo decisão minha, não da IA.
+- Adendo (o fechamento do ato, 02/11 à noite): fiz o **merge** do PR #41 — commit `791d47e` —
+  e apaguei a branch `esboco-da-forja` local e no remoto; a `main` voltou a ser a única. Rodei
+  a baseline **na `main` mergeada**: `git diff baseline.txt` vazio, os 17 comandos iguais. O
+  mestre **viu, autorizou e liberou o Ato IV** — com isso o último critério do Ato III está
+  cumprido. A limpeza do rastro (README, "Estado do projeto" do `CLAUDE.md`, este diário) foi
+  feita pela IA numa branch própria, `fecha-o-ato-iii`, porque a regra do projeto é não
+  commitar direto na `main`.
