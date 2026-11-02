@@ -286,3 +286,29 @@
 - Adendo: **a Regra 4 do Dia 23 está devendo.** Pedi que a explicação em voz alta ficasse para amanhã e
   os commits foram feitos na branch `esboco-da-forja`, que fica **sem merge** até eu explicar. Nada
   entrou na `main`; a regra não foi cumprida, foi **registrada como pendente**.
+
+## Dia 24 (02/11/26)
+- O que fiz: comecei pagando a **Regra 4 do Dia 23** — expliquei o desempacotamento
+  (`herois, aviso = carregar()`, porque a função devolve uma **tupla** de dois) e por que o
+  `return` dentro do `for` perde heróis (a prova mostrou `['Aldric']` em vez de `['Aldric',
+  'Cedric']`). Depois **religuei o programa nas classes**: mudei o `relatorios.py` (cinco
+  linhas, `heroi['nivel']` virou `heroi.nivel`), mudei os corpos de três funções do `cli.py`
+  e errei os cabeçalhos, e a IA fechou o `cli.py` e o `main.py`. Apaguei o `regras.py` e
+  mantive o `armazenamento.py`, com comentário, porque o `codice.py` do Ato I ainda o usa —
+  foi a **Decisão 6 revisada**, depois de o `grep` mostrar que apagar os dois quebraria a
+  história. Rodei a baseline: **idêntica**, 17 comandos com as mesmas respostas. Subi a
+  branch (`origin` estava parado desde o Dia 22) e atualizei o PR #41 com o antes/depois.
+- Onde travei: primeiro nos **cabeçalhos** do `cli.py` — troquei o corpo das três funções e
+  esqueci que o parâmetro ainda se chamava `herois`, então o `NameError: name 'guilda' is not
+  defined` apareceu no primeiro teste. Depois, na pergunta do **custo** da Decisão 4: eu achei
+  que a resposta precisava de um Ato novo ("o programa não salva no final, precisamos do Ato
+  IV"), quando a resposta estava no comportamento do próprio programa hoje.
+- O que entendi hoje: o que é **desempacotamento** de tupla e por que a função pode devolver
+  dois valores numa chamada só; que o `return` **encerra** a função, e por isso dentro do
+  `for` ele abandona o resto da lista; que o **cabeçalho** de uma função é a lista de nomes que
+  existem lá dentro; e o **custo** de trocar "grava no fim" por "grava a cada mudança" — some
+  a rede de segurança, sobra uma escrita deliberada. Prova: com o `herois.json` corrompido, o
+  `listar` de hoje **não** sobrescreve o arquivo; o de ontem teria escrito `[]` por cima.
+- Adendo: **Regra 4 do Dia 24 também paga**, no fim da sessão, com a frase "não existe mais a
+  rede de segurança em torno do código, deixa ele mais vulnerável de certa forma". O merge do
+  PR #41 continua sendo decisão minha, não da IA.

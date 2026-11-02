@@ -111,6 +111,14 @@ fato.
 **Porque** cada ação do programa cadastra um herói só — é atômica —, e gravar na hora
 protege o trabalho do usuário.
 
+**O custo, que tem nome:** o `main()` deixou de ter o `salvar_herois(herois)` no fim, e com
+ele foi embora a **rede de segurança** que garantia "o que está em memória é o que está no
+arquivo" ao sair de toda execução. Hoje, uma mudança feita por um método que esqueça de
+chamar `salvar` morre em silêncio no fim do programa. Em troca, nenhuma escrita acontece
+por acidente: `python main.py listar` não toca no arquivo, e um `herois.json` corrompido
+não é sobrescrito com `[]` — prova rodada em 02/11, com o arquivo quebrado antes e depois
+do `listar`.
+
 **Descartei** gravar só no fim, como o programa faz hoje: uma falha no meio do menu
 apagaria tudo o que foi feito na sessão.
 

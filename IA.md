@@ -211,5 +211,26 @@
   depois de ver o `KeyError` da alternativa, e escolhi o `RepositorioJson` como o único lugar que traduz.
   O nome das classes e as cinco decisões são do Dia 22 e continuam valendo.
 
+## Dia 24
+
+- Pergunta: "vamos começar"; depois as duas perguntas da Regra 4 do Dia 23 (por que duas
+  variáveis recebem de uma chamada só e por que o `return` do `filtrar` fica fora do `for`);
+  "me explique o que eu tenho que fazer" no `relatorios.py` e no `cli.py`; a decisão sobre o
+  que fazer com o `regras.py` e o `armazenamento.py`; e, no fim, "vamos cumprir a regra 4".
+- Resposta: a IA provou por execução em vez de discutir — mostrou que `carregar()` devolve uma
+  **tupla**, rodou a versão com `return` dentro do `for` ao lado da certa (`['Aldric']` contra
+  `['Aldric', 'Cedric']`), e mostrou que o aviso **não** é sobre herói antigo sem missões, e
+  sim sobre o pergaminho ausente ou rasgado. No `cli.py`, ela apontou que eu tinha mudado os
+  corpos mas não os cabeçalhos, provando com um `NameError`. Antes de apagar o
+  `armazenamento.py`, rodou um `grep` que achou o `codice.py` usando o arquivo — e refez a
+  decisão comigo. **A IA escreveu** o `exibir_numeros`, o `cadastrar_heroi`, o `menu`, o
+  `main.py`, o `DECISOES.md` (decisões 6 e o custo da 4), o texto do PR e este rastro.
+- O que mudei/decidi: escolhi **C** na Decisão 6 — apagar só o `regras.py` e manter o
+  `armazenamento.py`, "porque ele vai seguir as regras do ato e não quebrar o programa".
+  Decidi também que a IA podia commitar antes de eu responder a Regra 4 (segunda vez seguida),
+  com a pendência registrada; e paguei a regra no fim da sessão, explicando que o que se perde
+  é a rede de segurança. O push e a atualização do PR #41 foram autorizados por mim. **O merge
+  não** — esse fica para quando eu revisar o PR.
+
 
 
