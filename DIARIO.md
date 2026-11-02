@@ -319,3 +319,17 @@
   cumprido. A limpeza do rastro (README, "Estado do projeto" do `CLAUDE.md`, este diário) foi
   feita pela IA numa branch própria, `fecha-o-ato-iii`, porque a regra do projeto é não
   commitar direto na `main`.
+- Adendo (a consolidação, 02/11 — última sessão do dia): antes de começar o Ato IV, pedi um
+  **documento único** no Obsidian com todos os conceitos que eu vi e estudei do Dia 1 ao 24, na
+  forma mais completa possível. A IA escreveu o *Compêndio* — cinco camadas (linguagem, dados,
+  porta de comando, objetos, ofício), 111 seções, 98 callouts, com o código real do projeto, as
+  seis perguntas do Rito com resposta modelo e a tabela dos meus 31 erros.
+- Onde travei: não escrevi código hoje — a sessão foi de consolidar o que já existe. O único
+  atrito foi de **autoria**: o documento está bom, mas está na voz da IA; agora é minha tarefa
+  reescrever com as minhas palavras as seções que não soarem como eu.
+- O que entendi hoje: que **o documento só vale depois que eu o reescrevo** — material de
+  estudo lido não é material de estudo; e que a IA também erra e corrige com prova: ela tinha
+  escrito "a variável do `for` tem que ser um nome simples" como regra decorada, testou, e
+  descobriu que o `for` **aceita** `heroi["nome"]` — o que dá `NameError` é o dicionário
+  `heroi` não existir, porque o alvo do `for` **escreve**, não cria.
+

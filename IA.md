@@ -253,3 +253,27 @@
   decisão do autor". Ela me contou o bloqueio em vez de esconder, e o PR ficou esperando
   o meu merge, como o #41. A regra que sobra para as próximas sessões: **a IA nunca
   mergeia**, nem PR de documentação que ela mesma abriu.
+
+## Dia 24 — adendo (a consolidação, e o fechamento da sessão)
+
+- Pergunta: "eu quero um documento no obsidian explicando com o máximo de detalhes e
+  explicação todos os conceitos, que eu vi e estudei até aqui com a forma mais completa
+  possível de explicação e detalhes" — pedido antes de qualquer coisa do Ato IV. Depois:
+  "vamos encerrar a sessão".
+- Resposta: a IA escreveu o **Compêndio — todos os conceitos (Dias 1 a 24)** no vault,
+  em cinco camadas (a linguagem, os dados que sobrevivem, a porta de comando, os objetos,
+  o ofício), com 111 seções, 98 callouts, o código real do projeto, as seis perguntas do
+  Rito com resposta modelo e a tabela dos 31 erros. **A IA errou duas vezes e corrigiu com
+  prova:** (1) escreveu "a variável do `for` tem que ser um nome simples" como regra
+  decorada; testou e descobriu que `for heroi["nome"] in herois` é aceito pela linguagem —
+  o `NameError` vem de o dicionário `heroi` não existir, porque o alvo do `for` escreve,
+  não cria a caixa; (2) tinha escrito uma frase confusa sobre o `return` dentro do `for`,
+  misturando os dois casos (devolver um só × devolver todos) — separou em dois.
+- O que mudei/decidi: decidi **consolidar antes de abrir o Ato IV** — o ato novo começa
+  por ler a régua, e eu queria o mapa de onde eu estou antes de olhar para a frente.
+  Decidi também encerrar a sessão aqui, em vez de começar o ato com o dia já longo.
+  O compêndio é material de estudo meu: o texto é da IA, mas a versão que vale é a que eu
+  reescrever com as minhas palavras.
+- Pendência declarada: o **PR #42** continua aberto esperando o meu merge — a IA tentou
+  mergear e o sistema a bloqueou, com razão. Este adendo e o do diário entram na branch
+  `fecha-o-ato-iii`, e o merge é meu.
