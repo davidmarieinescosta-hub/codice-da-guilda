@@ -232,5 +232,19 @@
   é a rede de segurança. O push e a atualização do PR #41 foram autorizados por mim. **O merge
   não** — esse fica para quando eu revisar o PR.
 
+## Dia 24 — adendo (o fechamento do ato)
+
+- Pergunta: "fiz o merge, confira tudo" e, depois de o mestre responder, "o mestre viu e
+  autorizou, liberou o ato IV, ajeite as coisas".
+- Resposta: a IA conferiu o merge por três caminhos (`gh pr view 41 --json state`, `git branch
+  -a` e a baseline rodada na `main`) e achou tudo certo: PR `MERGED`, commit de merge
+  `791d47e`, branch apagada local e no remoto, baseline idêntica. Depois **atualizou** o
+  `README.md` (que ainda listava o `regras.py` como se ele existisse), a "Visão geral" e o
+  "Estado do projeto" do `CLAUDE.md`, este `IA.md` e o `DIARIO.md` — numa branch própria,
+  `fecha-o-ato-iii`, porque a regra do projeto proíbe commit direto na `main`.
+- O que mudei/decidi: o merge foi **meu**, executado por mim, e a autorização do mestre foi
+  relatada por mim — a IA não falou com ele. Decidi limpar o rastro **antes** de abrir o Ato IV,
+  para o repositório não ficar descrevendo um programa que não existe mais.
+
 
 
