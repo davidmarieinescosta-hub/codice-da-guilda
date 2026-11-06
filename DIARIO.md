@@ -333,3 +333,7 @@
   descobriu que o `for` **aceita** `heroi["nome"]` — o que dá `NameError` é o dicionário
   `heroi` não existir, porque o alvo do `for` **escreve**, não cria.
 
+### Dia 25 — 04/11/2026
+- **Fiz**: Comecei a fazer a tarefa que o mestre me pediu para fazer nesta semana, baseada na avaliação que ele fez dos Atos ja completos.
+- **Travei**: Não "travei" em nada, mas demorei um pouco para entender com ia ficar a estrutura da tabela do PREVISOES.md, mas endenti rapidamente logo depois.
+- **Entendi**: A importancia de analisar as saídas do códgo de acordo com as diferentes circuntâncias que podem acontecer quando o programa estiver operacional.
