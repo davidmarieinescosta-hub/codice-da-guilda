@@ -5,18 +5,7 @@
 **Data:** 2 de novembro de 2026 — Dia 24 de 90
 **Entrega:** PR #41 — https://github.com/davidmarieinescosta-hub/codice-da-guilda/pull/41
 
----
 
-## Sobre o Ato II
-
-O senhor encerrou o Ato II e disse que não voltaria a ele. Tomo isso como ponto de partida e não reabro o assunto.
-
-Registro uma coisa só, para o histórico ficar correto: o critério do Ato II falava em *um PR com
-correções pedidas pelo mestre*, e a revisão do senhor aprovou sem pedir nenhuma. Eu decidi não
-fabricar uma correção para fechar o critério. Fica escrito como o que foi — uma revisão externa que
-aprovou. Não peço nada sobre isso; é só para o registro não mentir depois.
-
----
 
 ## O que o Ato III pedia, e como ficou
 
@@ -171,4 +160,4 @@ código, e no Dia 20 congelei a baseline antes de mexer — e é o que vai pagar
 
 *David Angelo Soares da Costa · codice-da-guilda · 2 de novembro de 2026*
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
