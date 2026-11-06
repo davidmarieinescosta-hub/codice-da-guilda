@@ -334,6 +334,11 @@
   `heroi` não existir, porque o alvo do `for` **escreve**, não cria.
 
 ### Dia 25 — 04/11/2026
-- **Fiz**: Comecei a fazer a tarefa que o mestre me pediu para fazer nesta semana, baseada na avaliação que ele fez dos Atos ja completos.
-- **Travei**: Não "travei" em nada, mas demorei um pouco para entender com ia ficar a estrutura da tabela do PREVISOES.md, mas endenti rapidamente logo depois.
-- **Entendi**: A importancia de analisar as saídas do códgo de acordo com as diferentes circuntâncias que podem acontecer quando o programa estiver operacional.
+  - O que eu fiz: Comecei a fazer a tarefa que o mestre me pediu para fazer nesta semana, baseada na avaliação que ele fez dos Atos ja completos.
+  - Onde travei: Não "travei" em nada, mas demorei um pouco para entender com ia ficar a estrutura da tabela do PREVISOES.md, mas endenti rapidamente logo depois.
+  - O que eu entendi: A importancia de analisar as saídas do códgo de acordo com as diferentes circuntâncias que podem acontecer quando o programa estiver operacional.
+
+### Dia 26 — 06/11/2026
+  - o que eu fiz: Continuei com o desonvolvimento do PREVISOES.md, e consegui finaliza-lo, parei antes de ir para o DECISOES.md, que ficou para terminar amanhã.
+  - Onde trabei: travei principalmente quando me deparei com os meus prórios erros nos exercícios do PREVISOES, escrevi conceitos errados e tive que corijir a maioria.
+  - o que eu entendi: que eu precisava estudar mais o programa e começar a entender melhor o que cada coisa faz, para poder melhoe entender o programa como um todo.
