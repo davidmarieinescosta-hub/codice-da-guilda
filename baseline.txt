@@ -101,3 +101,40 @@ $ python main.py buscar --nome Aldric
 Herói não encontrado.
 [código de saída: 0]
 
+=== pergaminhos com defeito ===
+
+$ [herois.json] zero bytes
+O pergaminho está rasgado — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ [herois.json] null
+O pergaminho não é uma lista de heróis — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ [herois.json] chaves vazias
+O pergaminho não é uma lista de heróis — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ [herois.json] dicionário com conteúdo
+O pergaminho não é uma lista de heróis — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ [herois.json] herói sem nível
+O pergaminho tem um herói com defeito (herói sem o campo 'nivel') — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ [herois.json] nível como texto
+O pergaminho tem um herói com defeito (o campo 'nivel' não é um número) — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+
+$ [herois.json] missão incompleta
+O pergaminho tem um herói com defeito (uma missão do herói está incompleta) — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+

@@ -277,3 +277,36 @@
 - Pendência declarada: o **PR #42** continua aberto esperando o meu merge — a IA tentou
   mergear e o sistema a bloqueou, com razão. Este adendo e o do diário entram na branch
   `fecha-o-ato-iii`, e o merge é meu.
+
+## Dia 25 — o pergaminho que mente, parte A
+
+- Pergunta: "vamos continuar o T2" e, depois de uma rodada deu tudo errado, "estou
+  errando alguma coisa".
+- Resposta: a IA explicou o formato da tabela do `PREVISOES.md` (7 casos × 3 comandos,
+  com Previsão, Resultado, Acerto e Frase), mas **não** escreveu nenhuma previsão —
+  elas são minhas e foram feitas antes de rodar. Depois de rodar, sete casos deram
+  todos "O pergaminho está rasgado".
+- Erro da IA nesta sessão: a IA me mandou gravar o `herois.json` com
+  `Set-Content -Encoding utf8`. No PowerShell 5.1 isso grava um **BOM** (`EF BB BF`)
+  no começo do arquivo, e o Python não o remove — o `json.load` falhava em **todos**
+  os casos, inclusive no `[]`, que é válido. A IA descobriu com `od -An -tx1` e
+  `Format-Hex`, assumiu o erro e mandou usar `-Encoding ascii`. Lição registrada:
+  **se um caso válido falha, suspeite do canal, não do conteúdo.**
+
+## Dia 26 — o pergaminho que mente, parte B
+
+- Pergunta: "vamos continuar", depois "confira como está", "o bloco de decisão não
+  está claro para mim", "explique o caso 5", "é melhor manter 2?", "pode fazer o commit".
+- Resposta: a IA conferiu a tabela linha por linha e **não aceitou de primeira**:
+  (1) o caso 7 estava como `explode` nos três comandos, quando `listar` e `filtrar`
+  funcionam — provou com a execução que eu mesmo tinha colado dois dias antes;
+  (2) apontou que a legenda chamava de "avisa" casos em que o programa não percebeu
+  nada (2 e 4), e propôs uma coluna "O programa percebeu?" em vez de mudar a nota;
+  (3) corrigiu `json.load("null")` para `json.loads("null")`. Deu o mecanismo dos
+  casos 1, 3, 5 e 6 — eu escrevi as frases com as minhas palavras.
+- Números: **8 de 21** pela régua escrita antes do teste; **2 de 21** pela régua
+  fina. Só **1 dos 7** casos o programa percebeu sozinho.
+- O que mudei/decidi: deicide em  manter a régua dos 8 para relamente poder avaliar aquilo que eu  acertei perante a régua, mas que se for analisado com mais profundidade, eu tenho erros e coisas para aprofundar, so queria ter todo o caomiho percorido;
+- O que mudei/decidi: decidi apagar a seção do relátorio do ato III que falava do ato II porque não tinha mais necessidade contando que eu ja tinha resolvido as coisas com o mestre;
+- Commits: `abf7372` (a tabela), `07fa519` (o diário do Dia 25),
+  `7077d09` (o relatório).

@@ -50,6 +50,27 @@ CENARIOS = [
     ("guilda vazia", [], VAZIA),
 ]
 
+# Pergaminhos que o programa deve recusar. Aqui o arquivo é escrito como
+# texto cru, e não por json.dump: o defeito é justamente não ser uma lista
+# de heróis bem formados.
+PERGAMINHOS_DEFEITUOSOS = [
+    ("zero bytes", ""),
+    ("null", "null"),
+    ("chaves vazias", "{}"),
+    ("dicionário com conteúdo", '{"Aldric": 42}'),
+    (
+        "herói sem nível",
+        '[{"nome": "Aldric", "classe": "Mago", "nivel": 42},'
+        ' {"nome": "Bryn", "classe": "Ladino"}]',
+    ),
+    ("nível como texto", '[{"nome": "Aldric", "classe": "Mago", "nivel": "10"}]'),
+    (
+        "missão incompleta",
+        '[{"nome": "Aldric", "classe": "Mago", "nivel": 42,'
+        ' "missoes": [{"nome": "Caçar o dragão"}]}]',
+    ),
+]
+
 
 def rodar(comando: list, entrada: str | None) -> subprocess.CompletedProcess:
     """Roda o programa com o comando pedido e devolve o processo terminado."""
@@ -86,6 +107,17 @@ def main() -> None:
                     if processo.stderr:
                         saida.write("[erro]\n" + processo.stderr)
                     saida.write(f"[código de saída: {processo.returncode}]\n\n")
+
+            saida.write("=== pergaminhos com defeito ===\n\n")
+            for nome, conteudo in PERGAMINHOS_DEFEITUOSOS:
+                with open("herois.json", "w", encoding="utf-8") as arquivo:
+                    arquivo.write(conteudo)
+                saida.write(f"$ [herois.json] {nome}\n")
+                processo = rodar(["listar"], None)
+                saida.write(processo.stdout)
+                if processo.stderr:
+                    saida.write("[erro]\n" + processo.stderr)
+                saida.write(f"[código de saída: {processo.returncode}]\n\n")
     finally:
         with open("herois.json", "w", encoding="utf-8") as arquivo:
             arquivo.write(original)
