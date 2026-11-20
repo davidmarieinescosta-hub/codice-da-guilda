@@ -165,3 +165,111 @@ mostrar o programa de hoje.
 - Qualquer comando novo, inclusive de missão.
 - Validar nível negativo — registrado acima, com endereço.
 - `requirements.txt`, CSV e pasta de módulos: seguem sem casa, e nada aqui os pede.
+
+
+
+## Onde fica a linha entre dado ruim e programa errado?
+
+- Um dado ruim pode ser classificado quando, por exemplo, alguem editou o arquivo herois.json na mão, ou se o arquivo foi truncado no meio da gravação, se o JSON veio de um outro programa. Pode acontecer com qualquer um, porém o programa tem que sobreviver da mesmo forma.
+- Programa errado: o código tem uma suposição falsa. Isso não se trata — se grita, porque esconder o bug é pior que o bug.
+
+
+
+### Decisão 1 — Caso 1
+
+**Decidi:** Deixar funcionando como está, está de acordo com o que foi decido.
+**Porque:** porque foi decidido antes que o programa deveria agir dessa forma caso o pergaminho tivesse zero bytes.
+**Descartei:** não queria fazer de outra forma, já que desse jeito já está dando certo, sescartei deixar sem except, para o arquivo vazio dar traceback.
+**Prova:** `Set-Content herois.json '' -Encoding ascii -NoNewline` e depois `python main.py listar`
+
+```
+O pergaminho está rasgado — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+### Decisão 2 — Caso 2 
+
+**Decidi:** Deixar do jeito que está. 
+**Porque:** porque literalmente esá funcionandon, não a nada pra mudar.
+**Descartei:** porque não vou mudar algo que já está dando certo,descartei exigir que o pergaminho tenha pelo menos um herói.
+**Prova:** `Set-Content herois.json '[]' -Encoding ascii -NoNewline` e depois `python main.py listar`
+
+```
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+Sem linha de aviso: lista vazia é pergaminho válido, não pergaminho com defeito.
+
+
+
+### Decisão 3 — a raiz do pergaminho tem que ser uma lista (casos 3, 4 e 5)
+
+**Decidi:** Conferir a forma na entrada, e isso é uma condição para os três `null`, `{}`, `{"Aldric": 42}`.
+
+**Porque:** A conferência mora num lugar só (no carregador), a mensagem se diz o que esperava, e isso impede do program "mentir" e esconder um erro que pode acabar explodindo no final. Esta validação também pode esconder um defeito meu: se o salvar gravar o arquivo errado, o carregar do dia seguinte vai dizer 'o pergaminho é inválido', e eu vou investigar o arquivo em vez do meu código.
+
+**Descartei:**
+- deixar como está — o mesmo defeito dá respostas opostas conforme o dicionário esteja vazio ou não o que não pode ser mantido.
+- tratar caso a caso no _para_heroi — três remendos para um defeito só.
+- aceitar o dicionário e adivinhar o 42 — inventa um segundo formato que o salvar nunca escreve, e não tem como adivinhar um dado, a resposta vira um jogo de adivinha.
+**Prova:** as três execuções, cada uma com `Set-Content herois.json '<conteúdo>' -Encoding ascii -NoNewline` e depois `python main.py listar`
+
+`null`
+```
+O pergaminho não é uma lista de heróis — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+`{}`
+```
+O pergaminho não é uma lista de heróis — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+`{"Aldric": 42}`
+```
+O pergaminho não é uma lista de heróis — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+
+
+
+
+
+
+### Decisão 4 — Caso 6 e 7 
+
+**Decidi:** Tudo ou nada, o arquivo vai ficar intacto no disco. Se Abrib o Notepad, ainda tem chançe de consertá-lo. O programa não toca no que não entendeu. 
+**Porque:** Porque se salvar o que der, o programa vai estar carregando um dado que sabe estar incompleto. UM heroi com defeito invalida o pergaminho inteiro, o arquivo não é tocado, para poder ser consertado.
+**Descartei:** salvar o que der — carregar os heróis válidos e avisar quantos caíram. Recusei porque o programa regrava o arquivo inteiro a cada cadastro (guilda.py:16), então o primeiro salvar depois de uma carga parcial apagaria para sempre os heróis descartados. A evidência some junto com o dado.
+**Prova:** as três execuções, cada uma com `Set-Content herois.json '<conteúdo>' -Encoding ascii -NoNewline` e depois `python main.py listar`
+
+herói sem `nivel` (o Bryn), com um herói válido na mesma lista (o Aldric)
+```
+O pergaminho tem um herói com defeito (herói sem o campo 'nivel') — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+`nivel` como texto
+```
+O pergaminho tem um herói com defeito (o campo 'nivel' não é um número) — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+missão incompleta dentro de um herói válido
+```
+O pergaminho tem um herói com defeito (uma missão do herói está incompleta) — a guilda começa vazia.
+Nenhum herói na guilda.
+[código de saída: 0]
+```
+
+Vale em qualquer profundidade: um herói malformado, ou uma missão incompleta
+dentro dele, recusa o pergaminho inteiro — o arquivo no disco não é tocado.
