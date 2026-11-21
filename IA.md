@@ -310,3 +310,38 @@
 - O que mudei/decidi: decidi apagar a seção do relátorio do ato III que falava do ato II porque não tinha mais necessidade contando que eu ja tinha resolvido as coisas com o mestre;
 - Commits: `abf7372` (a tabela), `07fa519` (o diário do Dia 25),
   `7077d09` (o relatório).
+
+## Dia 27 — 18/11 (a parte C começa)
+
+- Pergunta: "voltei, me atualize do que falta fazer"; depois "preciso que vc me
+  lembre quais foram as decisões tomadas porque eu lembro vagamente"; "o que foi
+  que eu descartei mesmo no caso 3?"; "o que é melhor para o codice?".
+- Resposta: a IA levantou o estado real no repositório (branch, `git status`,
+  Issue #44 aberta) e listou o que faltava. Ao lembrar as decisões, apontou que
+  **a Decisão 3 antiga havia sido apagada na fusão e o arquivo nunca foi commitado** —
+  o único registro restante era a própria conversa. Recuperou o texto do descarte
+  do caso 3 a partir dela. Por fim recomendou **"tudo ou nada"**, com uma prova:
+  `guilda.py:16` regrava o arquivo inteiro a cada cadastro, então "salva o que der"
+  apagaria para sempre os heróis descartados no primeiro `salvar`.
+- O que mudei/decidi: porque a decisão que foi tomada resolvia o problema dos 3 casos. 
+- O que mudei/decidi: Eu escolhi tudo ou nada porque não se pode deixar entra um heroi que não esteja completo, porque não se pode salvar umm dado que já se sabe incompleto, é melhor não entrar nada.
+
+## Dia 28 — 20/11 (a implementação)
+
+- Pergunta: "coloque os códigos no lugar certo", "vamos de A", "pode commitar os
+  dois", "não estou conseguindo achar o meu repositório", "sim" (push).
+- Resposta: a IA digitou as três edições no `repositorio.py` (`PergaminhoInvalido`,
+  checagem da raiz, checagens dos campos) e rodou os sete casos — todos como decidido.
+  Rodou a baseline e **ela não mudou**: constatou que a baseline só testava dados
+  válidos, e que `git diff` vazio ali não provava nada. Acrescentou a seção
+  "pergaminhos com defeito" (+37 linhas, nenhuma removida).
+- **Achado durante a implementação:** um herói válido com uma missão sem
+  `dificuldade` ainda derrubava o programa com `KeyError` cru — o `except
+  PergaminhoInvalido` não pegava, porque ninguém levantava a exceção ali. Foi o
+  "caso 8" do exercício aparecendo antes da hora. A Opção A fechou o buraco.
+- **Erro da IA:** ao preencher as provas, ela acrescentou ao texto da minha Decisão 4
+  um parágrafo ("vale em qualquer profundidade") que eu não tinha escrito. Declarado
+  aqui; o texto é meu e eu tiro se não concordar.
+- O que mudei/decidi: Eu aceitei fechar um buraco que estava nas missões, para não ter nehum furo no programa. Porque se ficase o fura iria derubar o programa.
+- Commits: `584fdd1` (as decisões), `a5aca96` (o código e a baseline).
+  PR #45 aberto; o merge é meu.
