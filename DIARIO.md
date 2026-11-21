@@ -342,3 +342,12 @@
   - o que eu fiz: Continuei com o desonvolvimento do PREVISOES.md, e consegui finaliza-lo, parei antes de ir para o DECISOES.md, que ficou para terminar amanhã.
   - Onde trabei: travei principalmente quando me deparei com os meus prórios erros nos exercícios do PREVISOES, escrevi conceitos errados e tive que corijir a maioria.
   - o que eu entendi: que eu precisava estudar mais o programa e começar a entender melhor o que cada coisa faz, para poder melhoe entender o programa como um todo.
+
+### Dia 27 — 18/11/2026
+- **Fiz**: Voltei depois de dias ao codice para dar um olhada em como estava as coisa, já que tinha compromissos com a escola e fazia um tempo que eu não pegava no codigo. Decidi em fundir os casos 3, 4 e 5, e escolher o tudo ou nada.
+- **Travei**: Em nada.
+- **Entendi**: que algumas coisas precisam ser reavaliadas com cuidado para não se ter furos em um programa.
+### Dia 28 — 20/11/2026
+- **Fiz**: Terminei o DECISOES.md, ajustando o que faltava para terminar, e decidi que caso um pergaminho não esteja completo ele nnnão entra no codigo, tudo ou nada. 
+- **Travei**: Em algumas aplicações da regar 4, onde dei uma respotas erradas em relação a alguns Expects.
+- **Entendi**: Que é muito importante deixar o programa o mais organizado possivel, e que é muito importante conferir tudo para ver que não tem nenhum furo.
