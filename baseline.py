@@ -45,9 +45,23 @@ VAZIA = [
     (["buscar", "--nome", "Aldric"], None),
 ]
 
+# Caso da Issue #44: todos os níveis em zero ou abaixo, e o programa
+# escolhia o mais forte comparando contra um valor inicial de 0 — que
+# nenhum deles supera.
+NEGATIVOS = [
+    {"nome": "Grimm", "classe": "Bárbaro", "nivel": -3},
+    {"nome": "Ivy", "classe": "Clérigo", "nivel": 0},
+]
+
+COMANDOS_NEGATIVOS = [
+    (["listar"], None),
+    (["numeros"], None),
+]
+
 CENARIOS = [
     ("guilda com heróis", DADOS, COM_HEROIS),
     ("guilda vazia", [], VAZIA),
+    ("guilda com níveis zero ou negativos", NEGATIVOS, COMANDOS_NEGATIVOS),
 ]
 
 # Pergaminhos que o programa deve recusar. Aqui o arquivo é escrito como
