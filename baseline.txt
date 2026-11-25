@@ -98,6 +98,17 @@ Grimm, Bárbaro, nível: 5
 o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? agora você conhece a guilda
 [código de saída: 0]
 
+$ python main.py
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? Nome do herói: Atenção: o nome tem espaço no começo ou no fim.
+Classe: Atenção: a classe tem espaço no começo ou no fim.
+Nível: David  entrou para a guilda!
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? Qual nome quer buscar? Herói não encontrado.
+Existe "David " — era esse?
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? Qual classe quer filtrar? Nenhum herói na guilda com a classe de mago.
+Existe "Mago" — era essa?
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? agora você conhece a guilda
+[código de saída: 0]
+
 === guilda vazia ===
 
 $ python main.py listar
