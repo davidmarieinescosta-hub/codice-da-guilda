@@ -347,7 +347,13 @@
 - **Fiz**: Voltei depois de dias ao codice para dar um olhada em como estava as coisa, já que tinha compromissos com a escola e fazia um tempo que eu não pegava no codigo. Decidi em fundir os casos 3, 4 e 5, e escolher o tudo ou nada.
 - **Travei**: Em nada.
 - **Entendi**: que algumas coisas precisam ser reavaliadas com cuidado para não se ter furos em um programa.
+
 ### Dia 28 — 20/11/2026
 - **Fiz**: Terminei o DECISOES.md, ajustando o que faltava para terminar, e decidi que caso um pergaminho não esteja completo ele nnnão entra no codigo, tudo ou nada. 
 - **Travei**: Em algumas aplicações da regar 4, onde dei uma respotas erradas em relação a alguns Expects.
 - **Entendi**: Que é muito importante deixar o programa o mais organizado possivel, e que é muito importante conferir tudo para ver que não tem nenhum furo.
+
+### Dia 29 — 23/11/2026
+- **Fiz**: Corrigi o T1 e fiz o T4, o que já me fez avançar bastante hoje.
+- **Travei**: Travei no T4 no hora de reescrever as funções e tive que conseultar a função que estva tentano reescrever pois não estava conseguindo lembrar.
+- **Entendi**: Que eu preciso ter mais domínio da linguagem e da lógica, para não precisar ficar decorrando mas, sim entender o código.

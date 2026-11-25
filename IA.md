@@ -345,3 +345,28 @@
 - O que mudei/decidi: Eu aceitei fechar um buraco que estava nas missões, para não ter nehum furo no programa. Porque se ficase o fura iria derubar o programa.
 - Commits: `584fdd1` (as decisões), `a5aca96` (o código e a baseline).
   PR #45 aberto; o merge é meu.
+
+## Dia 29 — 23/11 (o T1 e a primeira prova da mão)
+
+- Pergunta: "vamos lá"; "qual seria a melhor" (entre as duas correções do mais forte);
+  "vamos de B, já coloque no código"; "tente de novo" (duas vezes, por causa da rede);
+  "vamos ao t4"; "que linhas em branco?"; "corrigi, pode conferir".
+- Resposta: a IA reproduziu a Issue #44 e deixou a investigação comigo — respondi que
+  o Ivy (nível 0) deveria ser o mais forte e que a variável começava em 0. Ela explicou
+  que o 0 fazia dois papéis ("maior nível visto" e "ninguém visto") e apresentou duas
+  correções; recomendei a B, e a razão foi separar os dois conceitos em vez de forçar
+  alguém na disputa.
+- **Erro da IA:** ela commitou o primeiro commit do T1 **direto na `main`**, violando a
+  regra do projeto. Percebeu em seguida, criou a branch e recuou a `main` local para
+  `origin/main` antes de qualquer push — nada chegou errado ao remoto. Segundo erro do
+  mesmo tipo (o primeiro foi no Dia 24).
+- **Erro da IA (2):** criticou a assinatura `classe = str` quando o arquivo no disco
+  ainda era o antigo — eu já tinha corrigido no editor e não salvei. A crítica valia
+  para o disco, não para o que eu estava vendo.
+- T1: dois commits (`7ba16e5` o caso na baseline com o programa ainda errado, `c1e63a6`
+  a correção). PR #48, com `Fixes #44`.
+- T4: reescrevi `Guilda.filtrar` (~4 min) e `cli.exibir_filtro` (~5 min). O resultado
+  ficou idêntico byte a byte. **Mas conferi a própria função quando travava** — então
+  a prova **não** foi sem ajuda, e não conta como cumprida.
+- O que mudei/decidi: Escolhi a opção B porque seria o melhor para o código e a opção A so funcionaria caso ja tivesse um heroi, por isso a opçao B se encaizava perfeitamente.
+- O que mudei/decidi: Que eu preciso ter mais conhecimento do código em si.
