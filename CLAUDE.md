@@ -130,7 +130,7 @@ nenhuma.
 - No mínimo 20 commits, em pelo menos 8 dias diferentes, mensagens no imperativo.
 - Um .gitignore que o autor entende linha por linha.
 
-## Estado do projeto (02/11/2026)
+## Estado do projeto (25/11/2026)
 
 - Remoto `origin` configurado (github.com/davidmarieinescosta-hub/codice-da-guilda).
 - **Atos I, II e III fechados.** O Ato II foi aprovado pelo mestre sem correção pedida; essa
@@ -139,6 +139,12 @@ nenhuma.
   branch `esboco-da-forja` apagada local e no remoto.
 - **Ato IV liberado** pelo mestre em 02/11. Ainda não há plano escrito para ele: a primeira
   tarefa do ato é decidir o que ele pede (ler a régua do programa) antes de escrever código.
+- **Semana de revisita em curso** (desde 03/11), antes do Ato IV. Fechadas: **T1** (a Issue
+  #44, fechada no merge `117608a` — a sentinela `mais_forte = 0` virou `None`) e **T2**
+  (o pergaminho que mente: `PREVISOES.md`, as quatro decisões no `DECISOES.md`, a exceção
+  `PergaminhoInvalido` e a seção "pergaminhos com defeito" na baseline). **T4** foi tentado
+  e não cumprido — reescrevi as duas funções consultando o original. Faltam **T3**
+  (o menu que explode), **T5** (README em outra máquina) e **T6** (o mapa no papel).
 - O programa de hoje: `main.py` monta `Guilda(RepositorioJson())`; a portaria pede ao baú em
   vez de carregar a lista; as contas ficam no `relatorios.py`. Roda por comando
   (`python main.py listar`) e pelo menu (`python main.py --help` mostra tudo).
@@ -149,13 +155,15 @@ nenhuma.
   mudança queira, de propósito, alterar uma resposta; aí o `baseline.txt` é regravado e a
   diferença é explicada no PR.
 - Toda mudança entra por branch + commit + PR; zero commit direto na `main`.
-- DIARIO.md e IA.md preenchidos até o Dia 24. 119 commits em 23 dias diferentes.
-- Continua pendente com o mestre: a **Issue da Sabotagem I** e a **data do Rito de
-  Passagem II** (o Rito do Ato II ainda não foi feito).
-- A prova dos 15 minutos sem IA (critério **Modificar**) nunca foi feita — é o furo conhecido.
+- DIARIO.md e IA.md preenchidos até o Dia 29. 140 commits em 27 dias diferentes.
+- Continua pendente com o mestre: a **data do Rito de Passagem II** (o Rito do Ato II ainda
+  não foi feito). A **Issue da Sabotagem I** foi entregue e fechada no T1.
+- A prova dos 15 minutos sem IA (critério **Modificar**) foi tentada no Dia 29 e **não
+  cumprida**: as funções saíram certas, mas consultando o original. Continua sendo o furo.
 - `teste_subcomandos.py` está solto na raiz, sem destino decidido.
-- Conceitos ainda sem casa no código: `raise`, `requirements.txt`, CSV e módulos numa pasta.
-  (`finally` ganhou casa na `baseline.py`.)
+- Conceitos ainda sem casa no código: `requirements.txt`, CSV e módulos numa pasta.
+  (`finally` ganhou casa na `baseline.py`, e `raise` ganhou casa no `PergaminhoInvalido`
+  do T2.)
 - .claude/settings.json contém credencial de API em texto puro. Está no .gitignore;
   nunca use `git add -f` nele nem copie o arquivo para outro lugar. Se algum dia for
   commitado, a chave precisa ser revogada.
