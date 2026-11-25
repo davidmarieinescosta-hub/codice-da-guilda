@@ -69,7 +69,8 @@ o `armazenamento.py`, que por isso continua no projeto.
 
 ### A medida
 
-`python baseline.py` roda 17 comandos em dois cenários e grava as respostas em
+`python baseline.py` roda 26 comandos em quatro cenários — guilda com heróis, guilda
+vazia, níveis zero ou negativos, e sete pergaminhos defeituosos — e grava as respostas em
 `baseline.txt`. Depois de qualquer mudança, `git diff baseline.txt` deve sair vazio — é assim
 que se prova que o programa responde o mesmo de antes.
 
