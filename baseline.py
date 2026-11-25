@@ -38,6 +38,9 @@ COM_HEROIS = [
     # T3: entradas de menu que não são o que o programa espera.
     ([], "voar\nsair\n"),  # opção que não existe
     ([], "cadastrar\nGrimm\nBárbaro\nabc\n5\nlistar\nsair\n"),  # letra no nível
+    # Achado no T5: nome e classe digitados com espaço no fim, e depois
+    # uma busca/filtro que não acha mas tem um parecido.
+    ([], 'cadastrar\nDavid \nMago \n10\nbuscar\nDavid\nfiltrar\nmago\nsair\n'),
 ]
 
 # A guilda vazia é onde vivem as cláusulas de guarda: cada comando tem que falar.

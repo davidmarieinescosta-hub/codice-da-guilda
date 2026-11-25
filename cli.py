@@ -25,6 +25,11 @@ def exibir_busca(guilda: Guilda, nome: str) -> None:
     resultado = guilda.buscar(nome)
     if resultado is None:
         print("Herói não encontrado.")
+        # A comparação é exata: "David " não é "David". Mas ficar calado
+        # é pior — se existe um parecido, o programa diz qual.
+        parecido = guilda.nome_parecido(nome)
+        if parecido is not None:
+            print(f'Existe "{parecido}" — era esse?')
     else:
         print(resultado.nome)
 
@@ -34,6 +39,9 @@ def exibir_filtro(guilda: Guilda, classe: str) -> None:
     aprovados = guilda.filtrar(classe)
     if len(aprovados) == 0:
         print(f"Nenhum herói na guilda com a classe de {classe}.")
+        parecida = guilda.classe_parecida(classe)
+        if parecida is not None:
+            print(f'Existe "{parecida}" — era essa?')
         return
     for linha in relatorios.formatar_lista(aprovados):
         print(linha)
@@ -64,7 +72,11 @@ def menu(guilda: Guilda) -> None:
     while opções != "sair":
         if opções == "cadastrar":
             nome = input("Nome do herói: ")
+            if nome != nome.strip():
+                print("Atenção: o nome tem espaço no começo ou no fim.")
             classe = input("Classe: ")
+            if classe != classe.strip():
+                print("Atenção: a classe tem espaço no começo ou no fim.")
             # O nível vem do teclado: pode vir letra. Enquanto não vier
             # número, pergunta de novo — sem perder nome e classe já lidos.
             while True:
