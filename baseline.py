@@ -35,6 +35,9 @@ COM_HEROIS = [
     (["cadastrar", "--nome", "X", "--classe", "Mago", "--nivel", "abc"], None),
     (["--help"], None),
     ([], "sair\n"),  # o menu: a entrada "sair" faz ele terminar
+    # T3: entradas de menu que não são o que o programa espera.
+    ([], "voar\nsair\n"),  # opção que não existe
+    ([], "cadastrar\nGrimm\nBárbaro\nabc\n5\nlistar\nsair\n"),  # letra no nível
 ]
 
 # A guilda vazia é onde vivem as cláusulas de guarda: cada comando tem que falar.

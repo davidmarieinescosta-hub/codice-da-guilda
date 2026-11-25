@@ -65,7 +65,15 @@ def menu(guilda: Guilda) -> None:
         if opções == "cadastrar":
             nome = input("Nome do herói: ")
             classe = input("Classe: ")
-            nivel = int(input("Nível: "))
+            # O nível vem do teclado: pode vir letra. Enquanto não vier
+            # número, pergunta de novo — sem perder nome e classe já lidos.
+            while True:
+                entrada = input("Nível: ")
+                try:
+                    nivel = int(entrada)
+                    break
+                except ValueError:
+                    print("Isso não é um número. Tente de novo.")
             cadastrar_heroi(guilda, nome, classe, nivel)
         elif opções == "listar":
             exibir_lista(guilda)
@@ -77,5 +85,8 @@ def menu(guilda: Guilda) -> None:
             exibir_filtro(guilda, classe)
         elif opções == "números":
             exibir_numeros(guilda)
+        else:
+            # Sem este else, uma opção desconhecida volta ao menu em silêncio.
+            print(f'A opção "{opções}" não existe.')
         opções = input("o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? ")
     print("agora você conhece a guilda")

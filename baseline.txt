@@ -81,6 +81,23 @@ $ python main.py
 o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? agora você conhece a guilda
 [código de saída: 0]
 
+$ python main.py
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? A opção "voar" não existe.
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? agora você conhece a guilda
+[código de saída: 0]
+
+$ python main.py
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? Nome do herói: Classe: Nível: Isso não é um número. Tente de novo.
+Nível: Grimm entrou para a guilda!
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? Aldric, Mago, nível: 42
+Bryn, Ladino, nível: 17
+Cedric, Mago, nível: 60
+Dara, Clérigo, nível: 8
+Elga, Clérigo, nível: 5
+Grimm, Bárbaro, nível: 5
+o que vc deseja fazer? cadastrar, listar, buscar, filtrar, números ou sair? agora você conhece a guilda
+[código de saída: 0]
+
 === guilda vazia ===
 
 $ python main.py listar
